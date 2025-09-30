@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Comic+Neue:wght@700&display=swap');
+/* app/brand.css */
+:root{
+  /* === TOKENS BASE (pueden ajustarse luego) === */
+  --brand-primary: #C84A3F;
+  --brand-secondary: #6B7078;
+  --brand-accent: #E5C177;
+  --brand-accent-cold: #84B3A6;
+  --brand-ink: #0F0F0F;
+  --brand-bg: #F9F9F7;
+
+  /* === SEMÁNTICOS === */
+  --background: var(--brand-bg);
+  --foreground: var(--brand-ink);
+  --muted: color-mix(in oklab, var(--brand-secondary) 12%, white);
+  --muted-foreground: var(--brand-secondary);
+  --border: color-mix(in oklab, var(--foreground) 14%, transparent);
+  --card: var(--background);
+  --card-foreground: var(--foreground);
+  --popover: var(--background);
+  --popover-foreground: var(--foreground);
+  --primary: var(--brand-primary);
+  --primary-foreground: white;
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: white;
+  --accent: var(--brand-accent);
+  --accent-foreground: #0F0F0F;
+  --ring: var(--brand-primary);
+  --ink: var(--brand-ink);
+
+  /* Hero gradient tokens (light) */
+  --hero-accent: var(--accent);
+  --hero-primary: var(--primary);
+
+  /* === PALETAS POR LÁMINA (PDF, orden 1→4 de arriba hacia abajo) === */
+  /* LÁMINA 1 */
+  --lam1-primary: #d9d5c9;
+  --lam1-accent: #656c71; /* (antes #65c71 corregido) */
+  --lam1-bg: #c05145;
+  --lam1-fg: #e6c794;
+  --lam1-muted: #80a9a6;
+  --lam1-muted-fg: #80a9a6;
+
+  /* LÁMINA 2 */
+  --lam2-primary: #d9d5c9;
+  --lam2-accent: #5c9ee9;
+  --lam2-bg: #c05145;
+  --lam2-fg: var(--brand-ink);
+  --lam2-muted: #cacd27;
+  --lam2-muted-fg: var(--brand-secondary);
+
+  /* LÁMINA 3 */
+  --lam3-primary: #d9d5c9;
+  --lam3-accent: #1e2c36;
+  --lam3-bg: #c24f39;
+  --lam3-fg: #3c352f;
+  --lam3-muted: #ebd9b8;
+  --lam3-muted-fg: #ebd9b8;
+
+  /* LÁMINA 4 (TODO: confirmar del PDF si difiere de 3) */
+  --lam4-primary: var(--lam3-primary);
+  --lam4-accent: var(--lam3-accent);
+  --lam4-bg: var(--lam3-bg);
+  --lam4-fg: var(--lam3-fg);
+  --lam4-muted: var(--lam3-muted);
+  --lam4-muted-fg: var(--lam3-muted-fg);
+
+  /* Tipos (se sobreescriben al cargar fuentes) */
+  --font-display: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-heading: var(--font-sans);
+  --font-body: var(--font-sans);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --brand-bg:#0F0F10;
+    --brand-ink:#ECECEC;
+
+    --background: var(--brand-bg);
+    --foreground: var(--brand-ink);
+    --muted: color-mix(in oklab, var(--brand-secondary) 20%, black);
+    --muted-foreground: color-mix(in oklab, var(--brand-ink) 60%, #B8B8B8);
+    --border: color-mix(in oklab, var(--foreground) 28%, transparent);
+    --card: var(--background);
+    --card-foreground: var(--foreground);
+    --popover: var(--background);
+    --popover-foreground: var(--foreground);
+    --primary-foreground: #111315;
+    --secondary-foreground: #111315;
+    --accent-foreground: #111315;
+    --ring: color-mix(in oklab, var(--brand-primary) 70%, white);
+
+    /* Hero gradient tokens (dark) */
+    --hero-accent: color-mix(in oklab, var(--accent) 60%, black);
+    --hero-primary: color-mix(in oklab, var(--primary) 60%, black);
+  }
+}
+
+/* ========= THEME HOOKS POR SECCIÓN (valores del cliente) ========= */
+/* Nota: corregimos dos typos para que sean HEX válidos:
+   #65c71  → #065c71
+   #3f6fla → #3f6f1a
+*/
+
+.theme-kisolab{
+  --primary: var(--lam1-primary);
+  --accent: var(--lam1-accent);
+  --background: var(--lam1-bg);
+  --foreground: var(--lam1-fg);
+  --muted: var(--lam1-muted);
+  --muted-foreground: var(--lam1-muted-fg);
+  /* fuentes por tema */
+  --font-heading: var(--font-libre), "Libre Baskerville","Baskerville","Big Caslon","Palatino Linotype","Palatino","Times New Roman",serif;
+  --font-body: var(--font-sans);
+}
+
+.theme-focos-penalty{
+  --primary: var(--lam2-primary);
+  --accent: var(--lam2-accent);
+  --background: var(--lam2-bg);
+  --foreground: var(--lam2-fg);
+  --muted: var(--lam2-muted);
+  --muted-foreground: var(--lam2-muted-fg);
+  /* fuentes por tema */
+  --font-heading: var(--font-comic), "Comic Neue","Comic Sans MS","Aetherius","Arial Rounded MT Bold",ui-sans-serif,system-ui,sans-serif;
+  --font-body: var(--font-sans);
+}
+
+.theme-mundo-kiso{
+  --primary: var(--lam3-primary);
+  --accent: var(--lam3-accent);
+  --background: var(--lam3-bg);
+  --foreground: var(--lam3-fg);
+  --muted: var(--lam3-muted);
+  --muted-foreground: var(--lam3-muted-fg);
+  /* fuentes por tema */
+  --font-heading: var(--font-libre), "Libre Baskerville","Baskerville","Big Caslon","Shree 714","Georgia","Times New Roman",serif;
+  --font-body: var(--font-sans);
+}
+
+.theme-orbe-sagrado{
+  --primary: var(--lam1-primary);
+  --accent: var(--lam1-accent);
+  --background: var(--lam1-bg);
+  --foreground: var(--lam1-fg);
+  --muted: var(--lam1-muted);
+  --muted-foreground: var(--lam1-muted-fg);
+  /* fuentes por tema */
+  --font-heading: var(--font-libre), "Libre Baskerville","Baskerville","Big Caslon","Shree 714","Georgia","Times New Roman",serif;
+  --font-body: var(--font-sans);
+}
+
+.theme-20-semillas{
+  /* lámina #2 */
+  --primary: var(--lam2-primary);
+  --accent: var(--lam2-accent);
+  --background: var(--lam2-bg);
+  --foreground: var(--lam2-fg);
+  --muted: var(--lam2-muted);
+  --muted-foreground: var(--lam2-muted-fg);
+  --font-heading: "Baskerville","Big Caslon","Shree 714","Georgia","Times New Roman",serif;
+  --font-body: var(--font-sans);
+}
+
+/* Utilidad: aplica el tema al contenedor */
+.theme{
+  background: var(--background);
+  color: var(--foreground);
+  /* Typography tokens */
+  --h1-size: clamp(2rem, 3.2vw + 1rem, 3.75rem);
+  --h1-leading: 1.1;
+  --h1-track: -0.02em;
+
+  --h2-size: clamp(1.375rem, 1.6vw + 1rem, 2rem);
+  --h2-leading: 1.2;
+  --h2-track: -0.01em;
+
+  --lead-size: 1.125rem;
+  --lead-leading: 1.6;
+}
+
+/* Typography utilities */
+.ty-h1{font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--h1-track);font-weight:800;color:var(--ink);font-family:var(--font-heading)}
+.ty-h2{font-size:var(--h2-size);line-height:var(--h2-leading);letter-spacing:var(--h2-track);font-weight:700;color:var(--ink);font-family:var(--font-heading)}
+.ty-lead{font-size:var(--lead-size);line-height:var(--lead-leading);opacity:.9;color:var(--ink);font-family:var(--font-body)}
