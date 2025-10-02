@@ -1,8 +1,25 @@
 // app/page.tsx — Home (usa componentes externos)
-export const metadata = {
-  title: "Kisoland — Universo Kiso",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "KISOLAND — Universo Kiso",
   description:
-    "Explorá Kisolab, Focos Penalty, Mundo Kiso y la Colección del Orbe Sagrado.",
+    "Universo Kiso: Kisolab, Orbe Sagrado y Focos Penalty. Memoria del fútbol convertida en experiencias vivas: exposiciones, piezas y relatos.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "KISOLAND — Universo Kiso",
+    description:
+      "Universo Kiso: Kisolab, Orbe Sagrado y Focos Penalty. Memoria del fútbol convertida en experiencias vivas: exposiciones, piezas y relatos.",
+    images: [
+      { url: "/og/home.jpg", width: 1200, height: 630, alt: "KISOLAND — Universo Kiso" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KISOLAND — Universo Kiso",
+    description:
+      "Universo Kiso: Kisolab, Orbe Sagrado y Focos Penalty. Memoria del fútbol convertida en experiencias vivas: exposiciones, piezas y relatos.",
+    images: ["/og/home.jpg"],
+  },
 };
 
 import Link from "next/link";

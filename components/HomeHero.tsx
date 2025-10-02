@@ -17,7 +17,10 @@ export default function HomeHero() {
           </p>
           <h1 className="mt-3 ty-h1">El universo de Kiso</h1>
           <p className="mt-4 ty-lead">
-            Explorá Kisolab, Focos Penalty, Mundo Kiso y la Colección del Orbe Sagrado.
+            Universo Kiso conecta fútbol, diseño y memoria en experiencias vivas: exposiciones, piezas y relatos.
+            Kisolab investiga y prototipa; el Orbe Sagrado resguarda más de 8.000 objetos con valor simbólico;
+            Focos Penalty abre preguntas que convierten el juego en encuentro. Este sitio organiza capítulos,
+            lugares y tiempos para leer la obra con claridad y sumarse al proyecto desde cualquier punto de entrada.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -28,7 +31,7 @@ export default function HomeHero() {
               Explorar Kisolab
             </Link>
             <Link
-              href="/quienes-somos"
+              href="/quienes-somos#contacto"
               className="inline-flex items-center rounded-md px-5 py-2.5 text-sm font-medium shadow-sm bg-[var(--foreground)] text-[var(--background)] hover:opacity-90 active:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] focus-visible:outline-offset-2"
             >
               Quiénes somos
@@ -40,6 +43,7 @@ export default function HomeHero() {
               ["Kisolab", "/kisolab"],
               ["Focos Penalty", "/focos-penalty"],
               ["Mundo Kiso", "/mundo-kiso"],
+              ["Origen", "/mundo-kiso#origen"],
               ["Orbe Sagrado", "/coleccion-del-orbe-sagrado"],
             ].map(([label, href], idx) => (
               <span key={href as string} className="flex items-center gap-2">
@@ -49,7 +53,7 @@ export default function HomeHero() {
                 >
                   {label as string}
                 </Link>
-                {idx < 3 ? <span aria-hidden className="opacity-40">·</span> : null}
+                {idx < 4 ? <span aria-hidden className="opacity-40">·</span> : null}
               </span>
             ))}
           </nav>

@@ -1,21 +1,23 @@
 // app/mundo-kiso/page.tsx
 import Image from "next/image";
-import Gallery from "@/components/Gallery";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "El mundo de Kiso — Kisoland",
+export const metadata: Metadata = {
+  title: "El mundo de Kiso — KISOLAND",
   description:
     "Geografía, cronología, personajes y símbolos que estructuran el universo Kiso.",
   alternates: { canonical: "/mundo-kiso" },
   openGraph: {
-    title: "El mundo de Kiso — Kisoland",
+    title: "El mundo de Kiso — KISOLAND",
     description:
       "Geografía, cronología, personajes y símbolos que estructuran el universo Kiso.",
-    images: ["/og/mundo-kiso.jpg"],
+    images: [
+      { url: "/og/mundo-kiso.jpg", width: 1200, height: 630, alt: "El mundo de Kiso — KISOLAND" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "El mundo de Kiso — Kisoland",
+    title: "El mundo de Kiso — KISOLAND",
     description:
       "Geografía, cronología, personajes y símbolos que estructuran el universo Kiso.",
     images: ["/og/mundo-kiso.jpg"],
@@ -42,9 +44,9 @@ export default function Page() {
     <main className="theme theme-mundo-kiso">
       <div className="mx-auto max-w-6xl px-4 py-16">
         {/* Hero / Intro */}
-        <section className="rounded-3xl ring-1 ring-[var(--border)] overflow-hidden">
+        <section className="rounded-3xl ring-1 ring-[var(--border)]">
           <div
-            className="p-8 md:p-12"
+            className="p-8 md:p-12 rounded-3xl overflow-hidden"
             style={{
               background:
                 "radial-gradient(120% 120% at 10% 0%, var(--hero-accent) 0%, transparent 60%), radial-gradient(140% 140% at 90% 100%, var(--hero-primary) 0%, transparent 60%)",
@@ -56,15 +58,18 @@ export default function Page() {
             <h1 className="mt-3 ty-h1">
               El mundo de Kiso
             </h1>
-            <p className="mt-4 max-w-2xl ty-lead">
-              Mapa, cronología y conceptos que sostienen el universo Kiso. Esta
-              sección organiza la información para que la lectura sea clara y
-              progresiva.
+            <p className="mt-3 max-w-2xl ty-lead">
+              El mundo de Kiso organiza la geografía, cronología y símbolos del universo. Aquí viven los
+              personajes principales, sus hitos y las piezas que los conectan con la historia del fútbol.
+              Esta sección funciona como mapa vivo: capítulos, lugares y tiempos que se expanden con cada
+              proyecto. El objetivo es dar contexto a la obra, facilitar la lectura y ofrecer un punto de
+              entrada claro tanto para nuevos lectores como para quienes siguen el desarrollo.
             </p>
 
             {/* Subnavegación */}
             <nav className="mt-6 flex flex-wrap gap-2">
               {[
+                ["Origen", "#origen"],
                 ["Mapa", "#mapa"],
                 ["Capítulos", "#capitulos"],
                 ["Personajes", "#personajes"],
@@ -84,7 +89,7 @@ export default function Page() {
           </div>
 
           {/* Body */}
-          <div className="bg-background/70 backdrop-blur p-6 md:p-8">
+          <div className="bg-background/70 backdrop-blur p-6 md:p-8 rounded-b-3xl overflow-hidden">
             {/* Mapa ilustrado */}
             <section id="mapa">
               <h2 className="ty-h2">Mapa ilustrado</h2>
@@ -119,6 +124,24 @@ export default function Page() {
                   <p className="mt-2 text-sm opacity-80">{v}</p>
                 </article>
               ))}
+            </section>
+
+            {/* Relato de origen */}
+            <section id="origen" className="mt-10">
+              <h2 className="ty-h2">Relato de origen</h2>
+              <article className="mt-4 rounded-xl p-6 ring-1 ring-[var(--border)] bg-card/90 text-card-foreground">
+                <p className="leading-relaxed">
+                  El Mundo de Kiso nace en Japón, en medio de las guerras Genpei. Kiso, samurái y visionario,
+                  entrenaba a sus guerreros con un balón de cuero, combinando la sabiduría del <em>kemari</em> y el
+                  <em> cuju</em> para forjar disciplina, precisión y concentración.
+                </p>
+                <p className="leading-relaxed mt-3">
+                  Su destino cambió cuando la diosa Amaterasu le entregó el Orbe Sagrado, símbolo de inmortalidad y de un
+                  lenguaje universal: la pelota. Desde entonces, Kiso camina por el tiempo con un propósito: custodiar el
+                  juego, descifrar las gambetas del destino y enseñar que, más allá de victorias o derrotas, el verdadero
+                  legado está en los valores del competidor integral.
+                </p>
+              </article>
             </section>
 
             {/* Arcos / personajes */}
@@ -171,9 +194,53 @@ export default function Page() {
             {/* Galería */}
             <section id="galeria" className="mt-12">
               <h2 className="ty-h2">Galería</h2>
-              <div className="mt-4">
-                <Gallery items={mkItems} cols={{ base: 2, sm: 3, md: 4 }} />
+              <div className="mt-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+                {mkItems.map((it, i) => (
+                  <div key={i} className="relative">
+                    {/* Trigger peer */}
+                    <input id={`mk-${i}`} type="checkbox" tabIndex={-1} className="peer hidden" />
+
+                    {/* Thumbnail clickable */}
+                    <label
+                      htmlFor={`mk-${i}`}
+                      className="block cursor-zoom-in overflow-hidden rounded-xl ring-1 ring-[var(--border)]"
+                    >
+                      <div className="relative w-full aspect-[16/9]">
+                        <img
+                          src={it.src}
+                          alt={it.alt}
+                          loading="lazy"
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      </div>
+                    </label>
+
+                    {/* Lightbox overlay */}
+                    <div className="pointer-events-none fixed inset-0 z-[999] hidden items-center justify-center peer-checked:flex" role="dialog" aria-modal="true">
+                      {/* click-outside to close */}
+                      <label
+                        htmlFor={`mk-${i}`}
+                        className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-zoom-out pointer-events-auto"
+                        aria-label="Cerrar"
+                      />
+                      <div className="relative z-10 w-full max-w-5xl p-4">
+                        <img
+                          src={it.src}
+                          alt={it.alt}
+                          className="w-full h-auto max-h-[85vh] rounded-xl shadow-2xl"
+                        />
+                        <label
+                          htmlFor={`mk-${i}`}
+                          className="absolute bottom-6 right-6 inline-flex items-center rounded-md bg-white/90 px-3 py-1 text-xs font-medium text-black shadow pointer-events-auto"
+                        >
+                          Cerrar
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
+              <p className="mt-2 text-xs opacity-60">Tocá una imagen para ampliarla. Cerrá con el botón o tocando afuera.</p>
             </section>
 
             <footer className="mt-12 border-t border-[var(--border)] pt-6 text-sm opacity-80">

@@ -1,20 +1,29 @@
 // app/focos-penalty/page.tsx
-export const metadata = {
-  title: "Focos Penalty — Ciencia del penal | Kisoland",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Focos Penalty — Ciencia del penal | KISOLAND",
   description:
-    "Lecturas y experimentos sobre la física, ética y entrenamiento del penal.",
+    "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
   alternates: { canonical: "/focos-penalty" },
   openGraph: {
-    title: "Focos Penalty — Ciencia del penal | Kisoland",
+    title: "Focos Penalty — Ciencia del penal | KISOLAND",
     description:
-      "Lecturas y experimentos sobre la física, ética y entrenamiento del penal.",
-    images: ["/og/focos-penalty.jpg"], // subir en public/og/
+      "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
+    images: [
+      {
+        url: "/og/focos-penalty.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Focos Penalty — Ciencia del penal",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Focos Penalty — Ciencia del penal | Kisoland",
+    title: "Focos Penalty — Ciencia del penal | KISOLAND",
     description:
-      "Lecturas y experimentos sobre la física, ética y entrenamiento del penal.",
+      "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
     images: ["/og/focos-penalty.jpg"],
   },
 };
@@ -51,8 +60,10 @@ export default function Page() {
               <p className="text-xs font-semibold tracking-widest opacity-70">FOCOS PENALTY</p>
               <h1 className="mt-3 ty-h1">Focos Penalty</h1>
               <p className="mt-3 max-w-2xl ty-lead">
-                Entrenamiento orientado a foco, precisión y toma de decisiones bajo
-                presión. Listado de contenidos, piezas y material práctico.
+                Focos Penalty es una herramienta de conexión y reflexión que, a partir de preguntas esenciales,
+                abre un diálogo global. Buscamos que cualquiera se reconozca en la universalidad del fútbol y
+                en la emoción de un instante decisivo: el penalti. Es la antesala del Mundial de Penaltis:
+                convertir la pregunta en juego, el juego en encuentro y el encuentro en memoria compartida.
               </p>
               <nav className="mt-5 flex gap-2 overflow-x-auto">
                 {[

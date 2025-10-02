@@ -1,8 +1,25 @@
 // app/quienes-somos/page.tsx
-export const metadata = {
-  title: "Quiénes somos — Kisoland",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Quiénes somos — KISOLAND",
   description:
     "Visión, valores y equipo detrás del universo Kiso. Arte, entrenamiento y producto con intención.",
+  alternates: { canonical: "/quienes-somos" },
+  openGraph: {
+    title: "Quiénes somos — KISOLAND",
+    description:
+      "Visión, valores y equipo detrás del universo Kiso. Arte, entrenamiento y producto con intención.",
+    images: [
+      { url: "/og/quienes-somos.jpg", width: 1200, height: 630, alt: "Quiénes somos — KISOLAND" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Quiénes somos — KISOLAND",
+    description:
+      "Visión, valores y equipo detrás del universo Kiso. Arte, entrenamiento y producto con intención.",
+    images: ["/og/quienes-somos.jpg"],
+  },
 };
 
 export default function Page() {
@@ -16,60 +33,47 @@ export default function Page() {
   return (
     <main className="theme bg-[var(--background)] text-[var(--foreground)]">
       <div className="mx-auto max-w-6xl px-4 py-16">
-        <header className="mb-10">
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Quiénes somos
-          </h1>
-          <p className="mt-3 max-w-2xl opacity-90">
-            Kisoland es un proyecto creativo que une arte, entrenamiento y
-            producto. Nuestro enfoque: claridad visual, narrativa coherente y
-            utilidad real para la comunidad.
+        <section className="mb-12 rounded-2xl border p-8 md:p-12 bg-[linear-gradient(135deg,hsl(var(--accent))_0%,transparent_60%)]">
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Quiénes somos</h1>
+          <p className="mt-3 max-w-2xl opacity-80">
+            Kisoland es un proyecto creativo que une arte, entrenamiento y producto. 
+            Diseñamos con intención, comunicamos sin ruido y priorizamos lo que se usa, 
+            se lee y se entrena.
           </p>
-        </header>
+        </section>
 
-        <section className="grid gap-6 md:grid-cols-3">
-          <article className="rounded-xl p-6 min-h-[9rem] ring-1 ring-white/10 bg-card text-card-foreground">
-            <h2 className="text-lg font-semibold">Propósito</h2>
+        <section className="grid gap-6 md:grid-cols-2">
+          <article className="rounded-xl p-6 min-h-[9rem] border bg-card text-card-foreground">
+            <h2 className="text-lg font-semibold">Misión</h2>
             <p className="mt-2 text-sm opacity-80">
-              Crear y compartir un universo que inspire disciplina, curiosidad y
-              enfoque, con piezas que trascienden lo decorativo.
+              Crear y compartir un universo que inspire disciplina, curiosidad y enfoque.
+              Piezas que trascienden lo decorativo y sirven al que entrena y aprende.
             </p>
           </article>
-          <article className="rounded-xl p-6 min-h-[9rem] ring-1 ring-white/10 bg-card text-card-foreground">
-            <h2 className="text-lg font-semibold">Valores</h2>
+          <article className="rounded-xl p-6 min-h-[9rem] border bg-card text-card-foreground">
+            <h2 className="text-lg font-semibold">Método</h2>
             <ul className="mt-2 list-disc pl-5 text-sm opacity-80 space-y-1.5">
-              <li>Rigor y honestidad en la forma y el fondo</li>
-              <li>Iteración consciente: explorar → prototipar → depurar</li>
-              <li>Respeto por el proceso y por quien entrena/crea</li>
+              <li>Explorar → prototipar → depurar, con ciclos cortos.</li>
+              <li>Rigor en forma y fondo. Claridad visual como regla.</li>
+              <li>Medir utilidad: ¿sirve, se entiende, se usa?</li>
             </ul>
-          </article>
-          <article className="rounded-xl p-6 min-h-[9rem] ring-1 ring-white/10 bg-card text-card-foreground">
-            <h2 className="text-lg font-semibold">Manifiesto</h2>
-            <p className="mt-2 text-sm opacity-80">
-              Diseñar con intención; comunicar sin ruido; priorizar lo que se
-              usa, se lee y se entrena.
-            </p>
           </article>
         </section>
 
-        <section className="mt-10 grid gap-8 md:grid-cols-2">
+        <section id="contacto" className="mt-10 grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">Equipo</h2>
+            <h2 className="text-xl font-bold">Equipo central</h2>
             <ul className="list-disc pl-5 text-sm opacity-80 space-y-1.5">
               <li>
-                <a href="/carlos-alberto-plata" className="underline underline-offset-4">
-                  Carlos Alberto Plata
-                </a>{" "}
-                — Creador del universo Kiso
+                <a href="/carlos-alberto-plata" className="underline underline-offset-4">Carlos Alberto Plata</a> — Creador del universo Kiso
               </li>
               <li>Colaboradores — a confirmar</li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h2 className="text-xl font-bold">Prensa y contacto</h2>
+            <h2 className="text-xl font-bold">Contacto</h2>
             <p className="opacity-90">
-              Para notas, muestras o alianzas, escribinos. Podemos compartir
-              dossier, imágenes en alta y línea editorial.
+              Para prensa, muestras o alianzas, escribinos. Compartimos dossier, imágenes en alta y línea editorial.
             </p>
             <div className="mt-3 flex flex-wrap gap-3">
               <a
@@ -95,9 +99,28 @@ export default function Page() {
           </div>
         </section>
 
+        {/* Cronología — placeholder hasta recibir fechas e hitos reales */}
+        <section id="cronologia" className="mt-12">
+          <h2 className="text-xl font-bold">Cronología</h2>
+          <ol className="mt-4 space-y-4 border-s border-border ps-6">
+            <li>
+              <div className="text-xs uppercase tracking-wide opacity-60">AÑO</div>
+              <p className="text-sm">Hito breve descriptivo (máx. 100 caracteres).</p>
+            </li>
+            <li>
+              <div className="text-xs uppercase tracking-wide opacity-60">AÑO</div>
+              <p className="text-sm">Hito breve descriptivo (máx. 100 caracteres).</p>
+            </li>
+            <li>
+              <div className="text-xs uppercase tracking-wide opacity-60">AÑO</div>
+              <p className="text-sm">Hito breve descriptivo (máx. 100 caracteres).</p>
+            </li>
+          </ol>
+          <p className="mt-3 text-xs opacity-60">*Reemplazar con fechas y eventos confirmados.</p>
+        </section>
+
         <footer className="mt-12 border-t pt-6 text-sm opacity-80">
-          ¿Quieren que sumemos fotos del equipo y una línea de tiempo de hitos?
-          Pásenlas y lo agregamos.
+          ¿Quieren sumar fotos del equipo o una cronología de hitos? Pásenlas y lo integramos.
         </footer>
       </div>
     </main>

@@ -91,9 +91,9 @@ export default function SiteHeader() {
       <nav className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-6">
         <Link href="/" aria-label="Inicio" className="inline-flex items-center gap-2">
           {/* Light bg (day) */}
-          <Image src="/brand/logo-dark.svg" alt="" width={28} height={28} priority className="inline dark:hidden" />
+          <Image src="/brand/mark-dark.svg" alt="" width={36} height={36} priority className="inline dark:hidden shrink-0" />
           {/* Dark bg (night) */}
-          <Image src="/brand/logo-light.svg" alt="" width={28} height={28} priority className="hidden dark:inline" />
+          <Image src="/brand/mark-light.svg" alt="" width={36} height={36} priority className="hidden dark:inline shrink-0" />
           <span className="sr-only">KISOLAND</span>
         </Link>
 

@@ -1,11 +1,25 @@
 // app/carlos-alberto-plata/page.tsx
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Carlos Alberto Plata — KISOLAND",
   description:
     "Biografía sintética del creador del universo Kiso y de la filosofía del Competidor Integral. Obra, enfoque y enlaces relacionados.",
+  openGraph: {
+    title: "Carlos Alberto Plata — KISOLAND",
+    description:
+      "Biografía sintética del creador del universo Kiso y de la filosofía del Competidor Integral. Obra, enfoque y enlaces relacionados.",
+    images: [
+      {
+        url: "/og/carlos-alberto-plata.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Carlos Alberto Plata — KISOLAND",
+      },
+    ],
+  },
 };
 
 export default function Page() {

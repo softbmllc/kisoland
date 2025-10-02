@@ -1,25 +1,53 @@
 // app/indumentaria/page.tsx
-export const metadata = {
-  title: "Indumentaria Kiso — Kisoland",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Indumentaria — KISOLAND",
   description:
     "Colección de indumentaria y accesorios oficiales del universo Kiso.",
+  alternates: { canonical: "/indumentaria" },
+  openGraph: {
+    title: "Indumentaria — KISOLAND",
+    description:
+      "Colección de indumentaria y accesorios oficiales del universo Kiso.",
+    images: [
+      { url: "/og/indumentaria.jpg", width: 1200, height: 630, alt: "Indumentaria — KISOLAND" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Indumentaria — KISOLAND",
+    description:
+      "Colección de indumentaria y accesorios oficiales del universo Kiso.",
+    images: ["/og/indumentaria.jpg"],
+  },
 };
 
 export default function Page() {
   return (
     <main className="theme mx-auto max-w-6xl px-4 py-16">
-      <header className="mb-10">
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-          Indumentaria Kiso
-        </h1>
+      <section className="mb-12 rounded-2xl border p-8 md:p-12 bg-[linear-gradient(135deg,hsl(var(--accent))_0%,transparent_60%)]">
+        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Indumentaria Kiso</h1>
         <p className="mt-3 max-w-2xl opacity-80">
           Prendas y accesorios con identidad Kiso. Drops limitados, materiales
           cuidados y calces pensados para entrenar y vivir con intención.
         </p>
-      </header>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a
+            href="#catalogo"
+            aria-disabled="true"
+            className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 pointer-events-none opacity-50"
+          >
+            Ver catálogo
+          </a>
+          <span className="inline-flex items-center rounded-md border border-border px-3 py-1 text-sm">
+            Próximamente
+          </span>
+        </div>
+      </section>
 
       {/* Cards placeholder — luego se reemplaza por catálogo del admin */}
-      <section className="grid gap-6 md:grid-cols-3">
+      <section id="catalogo" className="grid gap-6 md:grid-cols-3">
         {[
           ["Remera Kiso Logo", "Unisex, algodón. Talles S–XL."],
           ["Hoodie Kisoland", "Abrigo medio. Talles S–XL."],

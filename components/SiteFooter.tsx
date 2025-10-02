@@ -20,9 +20,9 @@ export default function SiteFooter() {
           {/* Marca */}
           <div className="flex items-center gap-3">
             {/* Light bg (day) */}
-            <Image src="/brand/logo-dark.svg" alt="" width={20} height={20} priority className="inline dark:hidden" />
+            <Image src="/brand/mark-dark.svg" alt="" width={24} height={24} priority className="inline dark:hidden shrink-0" />
             {/* Dark bg (night) */}
-            <Image src="/brand/logo-light.svg" alt="" width={20} height={20} priority className="hidden dark:inline" />
+            <Image src="/brand/mark-light.svg" alt="" width={24} height={24} priority className="hidden dark:inline shrink-0" />
             <span className="text-sm text-[var(--foreground)]/80">© {year} KISOLAND · Universo Kiso</span>
           </div>
 
