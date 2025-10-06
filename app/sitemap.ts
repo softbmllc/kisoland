@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "quienes-somos",
     "carlos-alberto-plata",
     "competidor-integral",
+    "privacidad",
+    "terminos",
   ];
 
   return routes.map((path) => ({

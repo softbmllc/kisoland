@@ -20,6 +20,7 @@ const GROUPS: NavGroup[] = [
       { href: "/kisolab", label: "Kisolab" },
       { href: "/mundo-kiso", label: "Mundo Kiso" },
       { href: "/coleccion-del-orbe-sagrado", label: "Orbe Sagrado" },
+      { href: "/galeria", label: "Galería" },
     ],
   },
   {
