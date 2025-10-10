@@ -74,11 +74,10 @@ export default function Page() {
                   <span key={href as string} className="flex items-center gap-2">
                     <a
                       href={href as string}
-                      className="text-sm underline underline-offset-4 decoration-[var(--border)] hover:decoration-[var(--foreground)]/60"
+                      className="text-xs rounded-full px-3 py-1 border border-[var(--border)] bg-background/70 backdrop-blur hover:bg-background/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
                     >
                       {label}
                     </a>
-                    {idx < 2 ? <span aria-hidden className="opacity-40">·</span> : null}
                   </span>
                 ))}
               </nav>

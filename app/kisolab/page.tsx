@@ -39,7 +39,7 @@ export default function Page() {
           >
             <div className="absolute inset-0 bg-background/25 [mask-image:linear-gradient(to-bottom,black,transparent_70%)]" />
             <div className="relative">
-              <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--accent)]">KISOLAB</p>
+              <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--foreground)]/90">KISOLAB</p>
               <h1 className="mt-3 ty-h1 text-[var(--foreground)] tracking-[-0.015em] md:whitespace-nowrap whitespace-normal" style={{ textWrap: "balance" }}>
                 Laboratorio de investigación y prototipos
               </h1>
@@ -59,11 +59,10 @@ export default function Page() {
                   <span key={href as string} className="flex items-center gap-2">
                     <a
                       href={href as string}
-                      className="text-sm underline underline-offset-4 decoration-[var(--border)] hover:decoration-[var(--foreground)]/60"
+                      className="text-xs rounded-full px-3 py-1 border border-[var(--border)] bg-background/70 backdrop-blur hover:bg-background/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
                     >
                       {label}
                     </a>
-                    {idx < 2 ? <span aria-hidden className="opacity-30">·</span> : null}
                   </span>
                 ))}
               </nav>
@@ -82,30 +81,57 @@ export default function Page() {
           <div className="mt-8 bg-background/80 p-6 md:p-8">
             {/* Bloques principales */}
             <section className="grid gap-5 md:grid-cols-3">
-              {[
-                ["investigacion", "Investigación visual", "Estudios de forma, color, textura y símbolos."],
-                ["narrativa", "Narrativa", "Worldbuilding, timeline y cohesión entre capítulos."],
-                ["producto", "Producto", "Prototipos de libros, indumentaria y objetos."],
-              ].map(([id, k, v]) => (
-                <article
-                  id={id as string}
-                  key={id as string}
-                  className="group relative rounded-2xl p-6 min-h-[9rem] border border-[var(--border)] bg-gradient-to-b from-background/70 to-background/40 text-card-foreground transition hover:-translate-y-1 hover:border-[var(--accent)]/40"
-                >
-                  <a
-                    href={`#${id as string}`}
-                    aria-label={`${k as string} — ver más`}
-                    className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
-                  />
-                  <h3 className="font-semibold tracking-tight text-[var(--foreground)]">{k as string}</h3>
-                  <p className="mt-2 text-sm text-[var(--foreground)]/80">{v as string}</p>
-                  <div className="mt-4 flex justify-end pointer-events-none">
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--foreground)]/70 underline underline-offset-4">
-                      Ver más <span aria-hidden>→</span>
-                    </span>
-                  </div>
-                </article>
-              ))}
+              <article
+                id="investigacion"
+                className="group relative rounded-2xl p-6 min-h-[12rem] border border-[var(--border)] bg-gradient-to-b from-background/70 to-background/40 text-card-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] transition hover:-translate-y-[2px] hover:border-[var(--accent)]/40"
+              >
+                <a
+                  href="#investigacion"
+                  aria-label="Investigación visual — ver más"
+                  className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                />
+                <h3 className="font-semibold tracking-tight text-[var(--foreground)]">Investigación visual</h3>
+                <p className="mt-2 text-sm text-[var(--foreground)]/80">Estudios de forma, color, textura y símbolos.</p>
+                <div className="mt-4 flex justify-end pointer-events-none">
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--foreground)]/70 underline underline-offset-4">
+                    Ver más <span aria-hidden>→</span>
+                  </span>
+                </div>
+              </article>
+              <article
+                id="narrativa"
+                className="group relative rounded-2xl p-6 min-h-[12rem] border border-[var(--border)] bg-gradient-to-b from-background/70 to-background/40 text-card-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] transition hover:-translate-y-[2px] hover:border-[var(--accent)]/40"
+              >
+                <a
+                  href="#narrativa"
+                  aria-label="Narrativa — ver más"
+                  className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                />
+                <h3 className="font-semibold tracking-tight text-[var(--foreground)]">Narrativa</h3>
+                <p className="mt-2 text-sm text-[var(--foreground)]/80">Worldbuilding, timeline y cohesión entre capítulos.</p>
+                <div className="mt-4 flex justify-end pointer-events-none">
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--foreground)]/70 underline underline-offset-4">
+                    Ver más <span aria-hidden>→</span>
+                  </span>
+                </div>
+              </article>
+              <article
+                id="producto"
+                className="group relative rounded-2xl p-6 min-h-[12rem] border border-[var(--border)] bg-gradient-to-b from-background/70 to-background/40 text-card-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] transition hover:-translate-y-[2px] hover:border-[var(--accent)]/40"
+              >
+                <a
+                  href="#producto"
+                  aria-label="Producto — ver más"
+                  className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                />
+                <h3 className="font-semibold tracking-tight text-[var(--foreground)]">Producto</h3>
+                <p className="mt-2 text-sm text-[var(--foreground)]/80">Prototipos de libros, indumentaria y objetos.</p>
+                <div className="mt-4 flex justify-end pointer-events-none">
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--foreground)]/70 underline underline-offset-4">
+                    Ver más <span aria-hidden>→</span>
+                  </span>
+                </div>
+              </article>
             </section>
 
             {/* Proyectos + Método */}

@@ -1,5 +1,4 @@
 // app/coleccion-del-orbe-sagrado/page.tsx
-import OrbeCollage from "@/components/OrbeCollage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,10 +25,15 @@ export default function Page() {
     <main className="theme theme-orbe-sagrado bg-[var(--background)] text-[var(--foreground)]">
       <div className="mx-auto max-w-6xl px-4 py-16">
         {/* Hero / Intro block */}
-        <section className="rounded-3xl ring-1 ring-[var(--border)] overflow-hidden">
+        <section
+          className="relative rounded-3xl ring-1 ring-[var(--border)] overflow-hidden"
+        >
           {/* Header copy */}
-          <div className="p-8 md:p-12">
-            <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--accent)]">ORBE SAGRADO</p>
+          <div className="relative z-10 p-8 md:p-12" style={{
+            background:
+              "radial-gradient(120% 120% at 10% 0%, var(--accent) 0%, transparent 60%), radial-gradient(140% 140% at 90% 100%, var(--primary) 0%, transparent 60%)",
+          }}>
+            <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--foreground)]/90">ORBE SAGRADO</p>
             <h1 className="mt-2 ty-h1">Colección del Orbe Sagrado</h1>
             <p className="mt-3 max-w-2xl ty-lead">
               El Orbe Sagrado es la esencia de nuestra colección: más de 8.000 piezas que guardan la
@@ -38,11 +42,14 @@ export default function Page() {
               mostrando al fútbol como lenguaje universal que conecta a los pueblos y revela la grandeza
               de lo humano.
             </p>
-          </div>
-
-          {/* Collage band reducido con desvanecido inferior */}
-          <div className="relative h-48 md:h-64 [mask-image:linear-gradient(to_bottom,black_0%,black_85%,transparent_100%)]">
-            <OrbeCollage />
+            <div className="mt-6">
+              <a
+                href="/galeria#orbe-sagrado"
+                className="inline-flex items-center rounded-md px-4 py-2 text-sm font-medium ring-1 ring-[var(--border)] hover:bg-background/70"
+              >
+                Ver galería completa →
+              </a>
+            </div>
           </div>
 
           {/* Body */}
@@ -55,7 +62,7 @@ export default function Page() {
                   <div key={title} className="relative">
                     {/* overlay clickable */}
                     <a
-                      href="/mundo-kiso#galeria"
+                      href="/galeria#orbe-sagrado"
                       aria-label={`Ver más sobre ${title}`}
                       className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                     />
@@ -69,14 +76,6 @@ export default function Page() {
                     </article>
                   </div>
                 ))}
-              </div>
-              <div className="mt-6">
-                <a
-                  href="/mundo-kiso#galeria"
-                  className="inline-flex items-center rounded-md border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
-                >
-                  Ver colección completa →
-                </a>
               </div>
             </section>
 
