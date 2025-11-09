@@ -1,4 +1,4 @@
-# KISOLAND — MVP Web
+# KISOLAND - MVP Web
 
 Sitio oficial del **universo Kiso** (Next.js App Router + TS + Tailwind v3).
 
