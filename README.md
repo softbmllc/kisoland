@@ -117,4 +117,4 @@ public/
 - Mensajes breves, una tarea por vez.
 
 ---
-Autor: Equipo KISOLAND — 2025
+Autor: Equipo KISOLAND - 2025
