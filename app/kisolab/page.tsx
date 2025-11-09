@@ -37,7 +37,6 @@ export default function Page() {
                 "radial-gradient(120% 120% at 10% 0%, var(--hero-accent) 0%, transparent 60%), radial-gradient(140% 140% at 90% 100%, var(--hero-primary) 0%, transparent 60%)",
             }}
           >
-            <div className="absolute inset-0 bg-background/25 [mask-image:linear-gradient(to-bottom,black,transparent_70%)]" />
             <div className="relative">
               <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--foreground)]/90">KISOLAB</p>
               <h1 className="mt-3 ty-h1 text-[var(--foreground)] tracking-[-0.015em] md:whitespace-nowrap whitespace-normal" style={{ textWrap: "balance" }}>
@@ -55,7 +54,7 @@ export default function Page() {
                   ["Investigación", "#investigacion"],
                   ["Narrativa", "#narrativa"],
                   ["Producto", "#producto"],
-                ].map(([label, href], idx) => (
+                ].map(([label, href]) => (
                   <span key={href as string} className="flex items-center gap-2">
                     <a
                       href={href as string}
@@ -69,7 +68,7 @@ export default function Page() {
               <div className="mt-5">
                 <a
                   href="/quienes-somos#contacto"
-                  className="inline-flex items-center rounded-md h-10 px-5 text-sm font-medium bg-[var(--foreground)] text-[var(--background)] hover:opacity-90 active:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                  className="inline-flex rounded-md px-5 py-2.5 text-sm font-medium ring-1 ring-[var(--border)] hover:bg-background/70"
                 >
                   Contactar laboratorio
                 </a>
@@ -140,7 +139,7 @@ export default function Page() {
                 <h2 className="ty-h2 text-[var(--foreground)]">Proyectos en curso</h2>
                 <ul className="list-disc pl-5 space-y-1.5 text-[var(--foreground)]/90">
                   <li>
-                    <Link prefetch href="/focos-penalty" className="underline underline-offset-4">Focos Penalty</Link> — línea de entrenamiento y foco
+                    <Link prefetch href="/focos-penalty" className="underline underline-offset-4">Focus Penalty</Link> — línea de entrenamiento y foco
                   </li>
                   <li>
                     <Link prefetch href="/coleccion-del-orbe-sagrado" className="underline underline-offset-4">Colección del Orbe Sagrado</Link> — piezas y relatos

@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "kisolab",
-    "focos-penalty",
+    "focus-penalty",
     "indumentaria",
     "mundo-kiso",
     "coleccion-del-orbe-sagrado",

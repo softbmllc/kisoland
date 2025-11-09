@@ -335,7 +335,7 @@ export default function Page() {
                 "radial-gradient(120% 120% at 10% 0%, var(--hero-accent) 0%, transparent 60%), radial-gradient(140% 140% at 90% 100%, var(--hero-primary) 0%, transparent 60%)",
             }}
           >
-            <p className="text-xs font-semibold tracking-widest opacity-80">
+            <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--foreground)]/90">
               MUNDO KISO
             </p>
             <h1 className="mt-3 ty-h1">
@@ -366,7 +366,7 @@ export default function Page() {
                 <a
                   key={href as string}
                   href={href as string}
-                  className="inline-flex items-center shrink-0 snap-start rounded-full border border-[var(--border)] bg-background/60 text-foreground px-3 py-1.5 text-[13px] hover:bg-background/80 transition-colors md:text-xs"
+                  className="text-xs rounded-full px-3 py-1 border border-[var(--border)] bg-background/70 backdrop-blur hover:bg-background/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] shrink-0 snap-start"
                   aria-label={`Ir a ${label as string}`}
                 >
                   {label}
@@ -416,10 +416,13 @@ export default function Page() {
                   aria-label="Cerrar"
                 />
                 <div className="relative z-10 w-full max-w-5xl p-4">
-                  <img
+                  <Image
                     src="/mundo-kiso/mapa-ilustrado.jpg"
                     alt="Mapa ilustrado del universo Kiso"
+                    width={1600}
+                    height={900}
                     className="w-full h-auto max-h-[85vh] rounded-xl shadow-2xl"
+                    priority
                   />
                   <label
                     htmlFor="map-lb"
@@ -436,7 +439,7 @@ export default function Page() {
             {/* Relato de origen */}
             <section id="origen" className="mt-12">
               <h2 className="ty-h2">Relato de origen</h2>
-              <article className="relative overflow-hidden mt-4 w-full rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/0.10)] bg-gradient-to-b from-background/80 to-background/55 text-foreground shadow-[0_6px_18px_rgba(0,0,0,.18)] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(120%_60%_at_50%_0%,rgba(255,255,255,.06)_0%,transparent_60%)] before:pointer-events-none space-y-4">
+              <article className="relative overflow-hidden mt-4 w-full rounded-2xl p-6 md:p-8 border border-[var(--border)] bg-gradient-to-b from-background/80 to-background/55 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(120%_60%_at_50%_0%,rgba(255,255,255,.06)_0%,transparent_60%)] before:pointer-events-none space-y-4">
                 <p className="leading-relaxed text-[15px]">
                   El Mundo de Kiso nace en Japón, en medio de las guerras Genpei. Kiso, samurái y visionario,
                   entrenaba a sus guerreros con un balón de cuero, combinando la sabiduría del <em>kemari</em> y el
@@ -452,14 +455,14 @@ export default function Page() {
             </section>
 
             {/* Arcos / personajes */}
-            <section id="capitulos" className="mt-12 md:mt-16 pt-10 border-t border-[hsl(var(--border)/.08)] grid gap-8 md:grid-cols-2 auto-rows-auto">
+            <section id="capitulos" className="mt-12 md:mt-16 pt-10 border-t border-[var(--border)] grid gap-8 md:grid-cols-2 auto-rows-auto">
               <div className="space-y-4">
                 <h2 className="ty-h2">Arcos</h2>
                 <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
                   {arcos.map((a) => (
                     <article
                       key={a.slug}
-                      className="relative overflow-hidden rounded-2xl p-5 border border-[hsl(var(--border)/0.10)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[0_6px_18px_rgba(0,0,0,.18)] md:h-[12rem] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]"
+                      className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] md:h-[12rem] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]"
                     >
                       <h3 className="text-[15px] font-semibold">{a.title}</h3>
                       <p className="mt-2 text-[13px] opacity-85">{a.synopsis}</p>
@@ -488,7 +491,7 @@ export default function Page() {
                         aria-label={`Abrir ficha de ${p.name}`}
                       >
                         <div className="relative w-full aspect-[3/4] rounded-xl bg-background/60 overflow-hidden px-3 md:px-4 py-2 after:content-[''] after:absolute after:inset-x-6 after:bottom-2 after:h-2 after:rounded-full after:bg-black/25 after:blur-[6px] after:z-0">
-                          <img src={p.src} alt={p.alt} className="absolute inset-0 w-full h-full object-contain z-10" loading="lazy" />
+                          <Image src={p.src} alt={p.alt} fill className="object-contain z-10" loading="lazy" />
                         </div>
                         <div className="mt-3 text-center min-h-[3.25rem] flex flex-col justify-center">
                           <div className="text-base font-semibold leading-tight">{p.name}</div>
@@ -539,7 +542,7 @@ export default function Page() {
                             <div className="max-h-[80vh] overflow-y-auto p-6 space-y-4">
                               <div className="flex justify-center">
                                 <div className="relative w-72 md:w-[34rem] max-h-[72vh] aspect-[3/4] rounded-xl bg-background/40 overflow-hidden">
-                                  <img src={p.src} alt={p.alt} className="absolute inset-0 w-full h-full object-contain" />
+                                  <Image src={p.src} alt={p.alt} fill className="object-contain" />
                                 </div>
                               </div>
 
@@ -607,7 +610,7 @@ export default function Page() {
             <section id="juegos-de-pelota" className="mt-10">
               <h2 className="ty-h2">Juegos de pelota</h2>
               <div className="mt-4 grid gap-4 md:grid-cols-2">
-                <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/0.10)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[0_6px_18px_rgba(0,0,0,.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
+                <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
                   <h3 className="text-[15px] font-semibold">Cuju</h3>
                   <p className="mt-2 text-[13px] opacity-85">
                     Pionero del fútbol en la China milenaria. En la dinastía Song fue juego de corte y calle; el emperador Huizong
@@ -617,7 +620,7 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/0.10)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[0_6px_18px_rgba(0,0,0,.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
+                <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
                   <h3 className="text-[15px] font-semibold">Kemari</h3>
                   <p className="mt-2 text-[13px] opacity-85">
                     Juego ceremonial japonés sin ganadores ni perdedores: cooperación, cortesía y dominio técnico para mantener la
@@ -627,7 +630,7 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/0.10)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[0_6px_18px_rgba(0,0,0,.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
+                <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
                   <h3 className="text-[15px] font-semibold">Episkyros</h3>
                   <p className="mt-2 text-[13px] opacity-85">
                     Juego de la Antigua Grecia, de contacto y trabajo en equipo, donde podía usarse la mano. Dos equipos de 12–14
@@ -636,7 +639,7 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/0.10)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[0_6px_18px_rgba(0,0,0,.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
+                <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
                   <h3 className="text-[15px] font-semibold">La soule</h3>
                   <p className="mt-2 text-[13px] opacity-85">
                     Juego medieval del norte de Francia (Normandía, Picardía). Se jugaba en prados, bosques o estanques, fuera de
@@ -646,7 +649,7 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/0.10)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[0_6px_18px_rgba(0,0,0,.18)] md:col-span-2 before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
+                <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] md:col-span-2 before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)] transition-transform duration-150 hover:-translate-y-[2px]">
                   <h3 className="text-[15px] font-semibold">Juego de los dioses</h3>
                   <p className="mt-2 text-[13px] opacity-85">
                     Antes de perder su poder el Orbe Sagrado, el juego divino tenía tres rondas sin violencia ni uso de manos. La
@@ -664,7 +667,7 @@ export default function Page() {
               <div className="mt-4">
                 <a
                   href="/galeria"
-                  className="relative block overflow-hidden rounded-2xl border border-[hsl(var(--border)/.08)] bg-gradient-to-b from-background/75 to-background/50 shadow-[0_8px_22px_rgba(0,0,0,.18)] p-6 md:p-8 hover:ring-1 hover:ring-[hsl(var(--accent)/.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--accent)/.35)] transition"
+                  className="relative block overflow-hidden rounded-2xl border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_8px_24px_rgba(0,0,0,0.18)] p-6 md:p-8 hover:ring-2 hover:ring-[var(--accent)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition"
                 >
                   <div className="grid gap-6 md:grid-cols-2 items-center">
                     <div>
@@ -676,7 +679,7 @@ export default function Page() {
                     </div>
                     <div className="grid grid-cols-2 gap-1 md:gap-2">
                       {[0,1,2,3].map((i) => (
-                        <div key={i} className="relative w-full aspect-[4/3] overflow-hidden rounded-lg md:rounded-xl ring-1 ring-[hsl(var(--border)/.08)]">
+                        <div key={i} className="relative w-full aspect-[4/3] overflow-hidden rounded-lg md:rounded-xl ring-1 ring-[var(--border)]">
                           <Image
                             src={mkItems[i].src}
                             alt={mkItems[i].alt}

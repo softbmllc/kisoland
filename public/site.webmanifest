@@ -1,7 +1,7 @@
 {
   "name": "KISOLAND",
   "short_name": "Kisoland",
-  "description": "Universo Kiso: Kisolab, Focos Penalty, Mundo Kiso y Colección del Orbe Sagrado.",
+  "description": "Universo Kiso: Kisolab, Focus Penalty, Mundo Kiso y Colección del Orbe Sagrado.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

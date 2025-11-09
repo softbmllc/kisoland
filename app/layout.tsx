@@ -11,6 +11,7 @@ const libre = Libre_Baskerville({ subsets: ["latin"], weight: ["400", "700"], va
 const comic = Comic_Neue({ subsets: ["latin"], weight: ["700"], variable: "--font-comic" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kiso.land"),
   title: 'KISOLAND',
   description: 'Universo Kiso.',
   icons: {

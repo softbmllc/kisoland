@@ -8,7 +8,7 @@ export default function HomeModules() {
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {[
           { href: "/kisolab", t: "Kisolab", d: "Investigación y prototipos." },
-          { href: "/focos-penalty", t: "Focos Penalty", d: "Ciencia y penal." },
+          { href: "/focus-penalty", t: "Focus Penalty", d: "Ciencia y penal." },
           { href: "/mundo-kiso", t: "Mundo Kiso", d: "Lore, mapa y símbolos." },
           {
             href: "/coleccion-del-orbe-sagrado",

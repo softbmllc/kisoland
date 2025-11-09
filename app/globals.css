@@ -8,6 +8,30 @@
 
 html, body { height: 100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* A11y: foco global visible y consistente */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
+  transition: box-shadow 120ms ease-out;
+}
+
+/* Evitar dobles outlines en navegadores */
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Utilidad opcional para componentes que no usan Tailwind ring */
+.focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
 }

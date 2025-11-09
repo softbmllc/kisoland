@@ -1,13 +1,17 @@
 // app/focos-penalty/page.tsx
+import type { NextPage } from "next";
 import type { Metadata } from "next";
+import Card from "@/components/ui/Card";
+import Chip from "@/components/ui/Chip";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Focos Penalty — Ciencia del penal | KISOLAND",
+  title: "Focus Penalty — Ciencia del penal | KISOLAND",
   description:
     "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
   alternates: { canonical: "/focos-penalty" },
   openGraph: {
-    title: "Focos Penalty — Ciencia del penal | KISOLAND",
+    title: "Focus Penalty — Ciencia del penal | KISOLAND",
     description:
       "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
     images: [
@@ -15,22 +19,22 @@ export const metadata: Metadata = {
         url: "/og/focos-penalty.jpg",
         width: 1200,
         height: 630,
-        alt: "Focos Penalty — Ciencia del penal",
+        alt: "Focus Penalty — Ciencia del penal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Focos Penalty — Ciencia del penal | KISOLAND",
+    title: "Focus Penalty — Ciencia del penal | KISOLAND",
     description:
       "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
     images: ["/og/focos-penalty.jpg"],
   },
 };
 
-export default function Page() {
+const Page: NextPage = () => {
   return (
-    <main className="theme theme-focos-penalty bg-[var(--background)] text-[var(--foreground)]">
+    <main className="theme theme-focus-penalty bg-[var(--background)] text-[var(--foreground)]">
       <div className="mx-auto max-w-6xl px-4 py-16">
         <header className="mb-8 md:mb-10">
           <div
@@ -41,11 +45,14 @@ export default function Page() {
             }}
           >
             {/* media hero */}
-            <div className="relative mb-6">
-              <img
+            <div className="relative mb-6 h-64 md:h-96 w-full">
+              <Image
                 src="/focos-penalty/hero.jpg"
                 alt="Disparo a portería, enfoque en el balón"
-                className="h-64 w-full rounded-xl object-cover object-[center_35%] ring-1 ring-[var(--border)] shadow-md md:h-96"
+                fill
+                priority
+                sizes="(min-width: 768px) 960px, 100vw"
+                className="rounded-xl object-cover object-[center_35%] ring-1 ring-[color:var(--border)] shadow-md"
               />
               <div
                 className="pointer-events-none absolute inset-0 rounded-xl mix-blend-multiply"
@@ -57,27 +64,24 @@ export default function Page() {
               />
             </div>
             <div className="relative z-10 max-w-2xl">
-              <p className="text-xs font-semibold tracking-widest opacity-70">FOCOS PENALTY</p>
-              <h1 className="mt-3 ty-h1">Focos Penalty</h1>
+              <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--foreground)]/90">FOCUS PENALTY</p>
+              <h1 className="mt-3 ty-h1">Focus Penalty</h1>
               <p className="mt-3 max-w-2xl ty-lead">
-                Focos Penalty es una herramienta de conexión y reflexión que, a partir de preguntas esenciales,
+                Focus Penalty es una herramienta de conexión y reflexión que, a partir de preguntas esenciales,
                 abre un diálogo global. Buscamos que cualquiera se reconozca en la universalidad del fútbol y
                 en la emoción de un instante decisivo: el penalti. Es la antesala del Mundial de Penaltis:
                 convertir la pregunta en juego, el juego en encuentro y el encuentro en memoria compartida.
               </p>
               <nav className="mt-5 flex gap-2 overflow-x-auto">
                 {[
-                  ["Resumen", "#resumen"],
                   ["Estructura", "#estructura"],
-                  ["Drills", "#drills"],
+                  ["Ejercicios", "#drills"],
                 ].map(([label, href], idx) => (
                   <span key={href as string} className="flex items-center gap-2">
-                    <a
-                      href={href as string}
-                      className="text-xs rounded-full px-3 py-1 border border-[var(--border)] bg-background/70 backdrop-blur hover:bg-background/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
-                    >
-                      {label}
-                    </a>
+                    <Chip as="a" href={href as string} size="sm" className="hover:bg-[color:var(--accent)]/15">
+                      {label as string}
+                    </Chip>
+                    {idx < 1 ? <span aria-hidden className="opacity-40">·</span> : null}
                   </span>
                 ))}
               </nav>
@@ -86,57 +90,128 @@ export default function Page() {
               className="pointer-events-none absolute inset-0 -z-0"
               aria-hidden
               style={{
-                maskImage:
-                  "radial-gradient(80% 60% at 20% 10%, black 50%, transparent 100%)",
+                maskImage: "radial-gradient(80% 60% at 20% 10%, black 50%, transparent 100%)",
               }}
             />
           </div>
         </header>
 
-        <section id="resumen" className="grid gap-4 md:grid-cols-3">
-          {[
-            [
-              "Objetivo",
-              "Desarrollar foco, timing y ejecución en escenarios de presión.",
-            ],
-            ["Método", "Sesiones breves, métricas claras y progresión semanal."],
-            [
-              "Materiales",
-              "Conos/estacas, cronómetro, planillas y cámara opcional.",
-            ],
-          ].map(([k, v]) => (
-            <article
-              key={k as string}
-              className="rounded-2xl p-6 min-h-[9rem] ring-1 ring-[var(--border)] bg-card/95 text-card-foreground shadow transition hover:-translate-y-1 hover:ring-2 hover:ring-[var(--accent)]/30"
-            >
-              <h3 className="font-semibold">{k}</h3>
-              <p className="mt-2 text-sm opacity-80">{v as string}</p>
-            </article>
-          ))}
-        </section>
-
-        <section className="mt-12 grid gap-10 md:grid-cols-2">
-          <div className="space-y-4">
-            <h2 id="estructura" className="ty-h2">Estructura sugerida</h2>
-            <ul className="list-disc pl-5 space-y-1.5 text-[var(--foreground)]/90">
-              <li>Calentamiento (5–8 min)</li>
-              <li>Bloque técnico (10–15 min)</li>
-              <li>Bloque de foco/decisiones (10–12 min)</li>
-              <li>Enfriamiento y registro (5 min)</li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h2 id="drills" className="ty-h2">Ejemplos de “drills”</h2>
-            <ul className="list-disc pl-5 space-y-1.5 text-[var(--foreground)]/90">
-              <li>Penalty con estímulo auditivo/visual</li>
-              <li>Secuencia 1‑2‑finta‑disparo</li>
-              <li>Rondas cronometradas con targets</li>
-            </ul>
+        {/* Estructura del entrenamiento */}
+        <section id="estructura" role="region" aria-labelledby="estructura-h" className="mt-8">
+          <h2 id="estructura-h" className="ty-h2 tracking-normal leading-tight mb-3 text-[clamp(1.4rem,2vw,1.75rem)]">Estructura del entrenamiento</h2>
+          <div className="mt-3 grid gap-10 md:grid-cols-2">
+            {[
+              {
+                t: "Calentamiento (5–8 min)",
+                v: "Activación general y específica, movilidad articular y coordinación.",
+              },
+              {
+                t: "Bloque técnico (10–15 min)",
+                v: "Tareas focalizadas en golpeo, orientación corporal y control.",
+              },
+              {
+                t: "Foco / decisiones (10–12 min)",
+                v: "Juegos reducidos con estímulos auditivos/visuales y condicionantes.",
+              },
+              {
+                t: "Enfriamiento y registro (5 min)",
+                v: "Respiración, feedback rápido y registro de métricas básicas.",
+              },
+            ].map((it) => (
+              <Card key={it.t} title={it.t} accent={false} className="transition-transform duration-150 hover:scale-[1.01]">
+                <p className="text-[15px] md:text-sm leading-snug max-w-[58ch]">{it.v}</p>
+              </Card>
+            ))}
           </div>
         </section>
 
-        <footer className="mt-12 border-t border-[var(--border)] pt-6">
-          <p className="text-sm opacity-80">
+        {/* Ejercicios de práctica */}
+        <section id="drills" role="region" aria-labelledby="drills-h" className="mt-12">
+          <h2 id="drills-h" className="ty-h2 tracking-normal leading-tight mb-3 text-[clamp(1.4rem,2vw,1.75rem)]">Ejercicios de práctica</h2>
+          <div className="mt-3 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                name: "Objetivo del penal",
+                objetivo: "Enfocar respiración, rutina corta y alineación.",
+                duracion: "8 min",
+                materiales: "4 conos, 1 balón, arco con 2 targets",
+              },
+              {
+                name: "Ritmo 1‑2‑disparo",
+                objetivo: "Pase de apoyo, control orientado y remate a primer o segundo palo.",
+                duracion: "10 min",
+                materiales: "6 conos, 1 balón por jugador",
+              },
+              {
+                name: "Lectura de estímulo",
+                objetivo: "Disparo según señal auditiva/visual para variar lado o altura.",
+                duracion: "10 min",
+                materiales: "4 conos, tarjetas R/L/↑/↓",
+              },
+              {
+                name: "Foco + fatiga",
+                objetivo: "Carrera corta + decisión de esquina en menos de 2s; series de 5 repeticiones.",
+                duracion: "12 min",
+                materiales: "cronómetro, 6 conos, 2 targets",
+              },
+              {
+                name: "Secuencia 1‑2‑finta‑disparo",
+                objetivo: "Doble pared, finta (paso, amague o recorte) y remate.",
+                duracion: "12 min",
+                materiales: "8 conos, 2 maniquíes opcionales",
+              },
+              {
+                name: "Rondas cronometradas con dianas",
+                objetivo: "Serie de 6 penales con scoring por zonas; registrar puntaje.",
+                duracion: "12 min",
+                materiales: "dianas o cintas de zonas, planilla",
+              },
+            ].map((drill) => (
+              <Card
+                key={drill.name}
+                title={drill.name}
+                accent={false}
+                className="transition-transform duration-150 hover:scale-[1.01]"
+              >
+                <div className="max-w-[52ch]">
+                  <ul className="space-y-1.5 leading-snug">
+                    <li><span className="font-semibold">Objetivo:</span> {drill.objetivo}</li>
+                    <li><span className="font-semibold">Duración:</span> {drill.duracion}</li>
+                    <li><span className="font-semibold">Materiales:</span> {drill.materiales}</li>
+                  </ul>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+        <div className="mt-20 border-t border-[color:var(--border)]/60" />
+
+        {/* CTA final */}
+        <section className="mt-0 pt-12">
+          <Card title="¿Listos para practicar?" accent={false} className="rounded-lg ring-[var(--border)]/18 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
+            <p className="max-w-[56ch] leading-[1.55]">
+              Podemos compartirte la guía completa en PDF o coordinar una demo.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
+                href="#"
+                aria-disabled
+                className="inline-flex items-center justify-center cursor-not-allowed select-none rounded-md px-4 py-2 text-sm font-medium text-[color:var(--fg-muted)] bg-[color:var(--surface-alt)]/60 ring-1 ring-[color:var(--border)] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]"
+              >
+                Descargar guía (pronto)
+              </a>
+              <a
+                href="/quienes-somos"
+                className="inline-flex items-center justify-center rounded-md px-5 py-2 text-sm font-semibold text-[color:var(--primary-contrast)] bg-[color:var(--accent)] ring-1 ring-[color:var(--accent)] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_2px_0_rgba(0,0,0,0.2)] hover:brightness-[1.02] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[color:var(--accent)] transition"
+              >
+                Contacto
+              </a>
+            </div>
+          </Card>
+        </section>
+
+        <footer className="mt-12 border-t border-[color:var(--border)]/40 pt-6">
+          <p className="text-sm text-[color:var(--fg-muted)]">
             ¿Quieren que preparemos una guía descargable? Pasen bullets y la
             maquetamos en PDF y web.
           </p>
@@ -144,4 +219,6 @@ export default function Page() {
       </div>
     </main>
   );
-}
+};
+
+export default Page;

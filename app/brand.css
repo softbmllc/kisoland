@@ -43,7 +43,7 @@
 
   /* LÁMINA 2 */
   --lam2-primary: #d9d5c9;
-  --lam2-accent: #5c9ee9;
+  --lam2-accent: #2563EB;
   --lam2-bg: #c05145;
   --lam2-fg: var(--brand-ink);
   --lam2-muted: #cacd27;
@@ -115,15 +115,18 @@
   --font-body: var(--font-sans);
 }
 
-.theme-focos-penalty{
+.theme-focus-penalty{
   --primary: var(--lam2-primary);
   --accent: var(--lam2-accent);
   --background: var(--lam2-bg);
   --foreground: var(--lam2-fg);
   --muted: var(--lam2-muted);
   --muted-foreground: var(--lam2-muted-fg);
+  --primary-contrast: #ffffff;
+  --surface: color-mix(in oklab, var(--primary) 94%, var(--background));
+  --surface-foreground: #1f1f1f; /* tinta oscura para texto sobre surface crema */
   /* fuentes por tema */
-  --font-heading: var(--font-comic), "Comic Neue","Comic Sans MS","Aetherius","Arial Rounded MT Bold",ui-sans-serif,system-ui,sans-serif;
+  --font-heading: var(--font-comic), "Comic Neue","Comic Sans MS","Aetherius","Arial Rounded MT Bold", ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-sans);
 }
 
@@ -184,3 +187,51 @@
 .ty-h1{font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--h1-track);font-weight:800;color:var(--ink);font-family:var(--font-heading)}
 .ty-h2{font-size:var(--h2-size);line-height:var(--h2-leading);letter-spacing:var(--h2-track);font-weight:700;color:var(--ink);font-family:var(--font-heading)}
 .ty-lead{font-size:var(--lead-size);line-height:var(--lead-leading);opacity:.9;color:var(--ink);font-family:var(--font-body)}
+
+
+/* Focus Penalty — variantes explícitas por modo */
+.theme-focus-penalty.light {
+  --bg: #ffffff;
+  --surface: #faf7f2;
+  --surface-alt: #f2efe8;
+  --border: rgba(0,0,0,0.08);
+  --fg: #1b1b1b;
+  --fg-muted: #6a6f6a;
+  --fg-strong: #0b0b0b;
+  --primary: #10B981;
+  --primary-weak: color-mix(in oklab, var(--primary) 16%, transparent);
+  --primary-contrast: #ffffff;
+  --ring: var(--primary);
+  --accent: var(--primary);
+  --shadow-md: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.12);
+}
+
+.theme-focus-penalty.dark {
+  --bg: #201a19;
+  --surface: #1a1a1a;
+  --surface-alt: #242424;
+  --border: rgba(255,255,255,0.08);
+  --fg: #e9e9e9;
+  --fg-muted: #b0b0b0;
+  --fg-strong: #ffffff;
+  --primary: #10B981;
+  --primary-weak: color-mix(in oklab, var(--primary) 16%, transparent);
+  --primary-contrast: #ffffff;
+  --ring: var(--primary);
+  --accent: var(--primary);
+  --shadow-md: 0 1px 0 rgba(255,255,255,.04), 0 8px 18px rgba(0,0,0,.28);
+  --shadow-lg: 0 12px 26px rgba(0,0,0,.38);
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-focus-penalty:not(.light):not(.dark) {
+    --bg: #0b0b0b;
+    --surface: #1a1a1a;
+    --surface-alt: #242424;
+    --border: rgba(255,255,255,0.08);
+    --fg: #e9e9e9;
+    --fg-muted: #b0b0b0;
+    --fg-strong: #ffffff;
+  }
+}

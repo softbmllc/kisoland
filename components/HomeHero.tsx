@@ -19,7 +19,7 @@ export default function HomeHero() {
           <p className="mt-4 ty-lead">
             Universo Kiso conecta fútbol, diseño y memoria en experiencias vivas: exposiciones, piezas y relatos.
             Kisolab investiga y prototipa; el Orbe Sagrado resguarda más de 8.000 objetos con valor simbólico;
-            Focos Penalty abre preguntas que convierten el juego en encuentro. Este sitio organiza capítulos,
+            Focus Penalty abre preguntas que convierten el juego en encuentro. Este sitio organiza capítulos,
             lugares y tiempos para leer la obra con claridad y sumarse al proyecto desde cualquier punto de entrada.
           </p>
 
@@ -41,7 +41,7 @@ export default function HomeHero() {
           <nav className="mt-6 flex flex-wrap items-center gap-2 text-xs">
             {[
               ["Kisolab", "/kisolab"],
-              ["Focos Penalty", "/focos-penalty"],
+              ["Focus Penalty", "/focus-penalty"],
               ["Mundo Kiso", "/mundo-kiso"],
               ["Origen", "/mundo-kiso#origen"],
               ["Orbe Sagrado", "/coleccion-del-orbe-sagrado"],

@@ -31,7 +31,7 @@ app/
   ├─ galeria/page.tsx               # Masonry + lightbox; soporta ImageKit
   ├─ mundo-kiso/page.tsx            # Hero + mapa (lightbox) + relato + arcos + personajes + juegos + CTA galería
   ├─ coleccion-del-orbe-sagrado/page.tsx  # Collage hero + destacados + copy
-  ├─ focos-penalty/page.tsx         # Hero visual + chips + copy verificado
+  ├─ focus-penalty/page.tsx         # Hero visual + chips + copy verificado
   ├─ indumentaria/page.tsx          # Landing (gradiente + CTA)
   ├─ kisolab/page.tsx               # Hero + chips + cards + CTA
   ├─ quienes-somos/page.tsx         # Misión/Método + equipo + cronología placeholder
@@ -85,7 +85,7 @@ public/
 
 ## Contenido cargado
 - **Personajes** (principales, inmortales y deidades) con **roles + bios** desde el doc del cliente.
-- **Textos verificados** para *Kisolab*, *Orbe Sagrado* y *Focos Penalty*.
+- **Textos verificados** para *Kisolab*, *Orbe Sagrado* y *Focus Penalty*.
 
 ## Pendientes (cliente)
 1) **Mapa ilustrado** final (JPG 2400×1600 sRGB, sin texto/logos, \~30% aire arriba).
@@ -117,4 +117,4 @@ public/
 - Mensajes breves, una tarea por vez.
 
 ---
-Autor: Equipo KISOLAND - 2025
+Autor: Equipo KISOLAND — 2025

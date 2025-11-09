@@ -4,19 +4,26 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Colección del Orbe Sagrado — KISOLAND",
   description:
-    "Esencia de nuestra colección: 8.000+ piezas que guardan la memoria del fútbol y su poder simbólico. Un universo vivo que inspira, educa y conecta.",
+    "El Orbe Sagrado es la esencia de nuestra colección: más de 8.000 piezas que guardan la memoria del fútbol y su poder simbólico.",
   openGraph: {
     title: "Colección del Orbe Sagrado — KISOLAND",
     description:
-      "Esencia de nuestra colección: 8.000+ piezas que guardan la memoria del fútbol y su poder simbólico. Un universo vivo que inspira, educa y conecta.",
+      "El Orbe Sagrado es la esencia de nuestra colección: más de 8.000 piezas que guardan la memoria del fútbol y su poder simbólico.",
     images: [
       {
-        url: "/og/coleccion-del-orbe-sagrado.jpg",
+        url: "/og/orbe-sagrado.jpg",
         width: 1200,
         height: 630,
         alt: "Colección del Orbe Sagrado — KISOLAND",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Colección del Orbe Sagrado — KISOLAND",
+    description:
+      "El Orbe Sagrado es la esencia de nuestra colección: más de 8.000 piezas que guardan la memoria del fútbol y su poder simbólico.",
+    images: ["/og/orbe-sagrado.jpg"],
   },
 };
 
@@ -66,7 +73,7 @@ export default function Page() {
                       aria-label={`Ver más sobre ${title}`}
                       className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                     />
-                    <article className="relative rounded-2xl p-6 border border-[var(--border)] bg-card/95 text-card-foreground transition hover:border-[var(--accent)]/40">
+                    <article className="relative rounded-2xl p-6 min-h-[12rem] border border-[var(--border)] bg-gradient-to-b from-background/70 to-background/40 text-card-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] transition hover:-translate-y-[2px] hover:border-[var(--accent)]/40">
                       {/* media placeholder 4:3 para futuras imágenes */}
                       <div className="relative w-full aspect-[4/3] rounded-lg ring-1 ring-[var(--border)] bg-background/40" aria-hidden />
                       <h3 className="mt-3 font-semibold">{title}</h3>

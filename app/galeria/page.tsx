@@ -108,12 +108,13 @@ function ThumbsGrid({ items, group }: { items: typeof orbe; group: string }) {
 
                 {/* imagen */}
                 <figure className="relative z-10 w-full max-w-5xl p-4">
-                  <img
+                  <Image
                     src={`${it.full}?tr=w-1600,h-1200,fo-auto,c-at_max,q-70,f-auto,dpr-2`}
                     alt={it.alt}
+                    width={1600}
+                    height={1200}
                     className="w-full h-auto max-h-[85vh] rounded-xl shadow-2xl"
-                    loading="eager"
-                    decoding="async"
+                    priority
                   />
                   <div className="absolute top-6 left-6 inline-flex items-center rounded-full bg-white/90 px-2.5 py-1 text-xs font-medium text-black shadow pointer-events-auto">
                     {i + 1}/{items.length}

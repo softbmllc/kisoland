@@ -1,21 +1,28 @@
 // app/competidor-integral/page.tsx
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "¿Qué es el Competidor Integral? — KISOLAND",
+  title: "Competidor Integral — Ética y entrenamiento | KISOLAND",
   description:
-    "Marco conceptual de Kiso para desarrollo físico, mental y técnico a largo plazo.",
+    "Marco de formación que integra cuerpo, mente y conducta para la excelencia con valores.",
   openGraph: {
-    title: "¿Qué es el Competidor Integral? — KISOLAND",
+    title: "Competidor Integral — Ética y entrenamiento | KISOLAND",
     description:
-      "Marco conceptual de Kiso para desarrollo físico, mental y técnico a largo plazo.",
+      "Marco de formación que integra cuerpo, mente y conducta para la excelencia con valores.",
     images: [
       {
         url: "/og/competidor-integral.jpg",
         width: 1200,
         height: 630,
-        alt: "¿Qué es el Competidor Integral? — KISOLAND",
+        alt: "Competidor Integral — KISOLAND",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Competidor Integral — Ética y entrenamiento | KISOLAND",
+    description:
+      "Marco de formación que integra cuerpo, mente y conducta para la excelencia con valores.",
+    images: ["/og/competidor-integral.jpg"],
   },
 };
 
