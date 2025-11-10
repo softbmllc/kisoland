@@ -118,3 +118,26 @@ public/
 
 ---
 Autor: Equipo KISOLAND — 2025
+
+---
+
+## 📦 Release v0.9.0 — Refinamiento Focus Penalty + Coherencia global + A11y
+
+### Cambios principales
+- Unificación total de tokens y temas (dark/light).
+- Refinamiento de Focus Penalty: hero, cards, chips y CTA con contraste AAA.
+- Foco visible global (AA) en links, botones y chips.
+- Conversión de todas las imágenes a `next/image` para rendimiento y SEO.
+- Tipado estricto en componentes base (`Card`, `Chip`).
+- `metadataBase` añadido a `layout.tsx`.
+- Limpieza completa de ESLint (0 errores / 0 warnings).
+- Ajuste de `next.config.ts` con `outputFileTracingRoot`.
+
+### Checklist de mantenimiento post‑sprint
+- [ ] Reemplazar placeholders OG (`competidor-integral.jpg`, `indumentaria.jpg`).
+- [ ] Eliminar lockfile duplicado fuera del proyecto.
+- [ ] Agregar arte final de mapa ilustrado y cronología (cuando llegue del cliente).
+- [ ] Validar foco visible tras integración de nuevas secciones (símbolos / timeline).
+- [ ] Generar release v1.0.0 con deploy a producción (Vercel).
+
+---
