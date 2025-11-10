@@ -1,5 +1,7 @@
 // app/quienes-somos/page.tsx
 import type { Metadata } from "next";
+import Timeline from "@/components/Timeline";
+import { QUIENES_SOMOS_TIMELINE } from "./timeline.data";
 export const metadata: Metadata = {
   title: "Quiénes somos — KISOLAND",
   description:
@@ -97,26 +99,6 @@ export default function Page() {
               *Actualizaremos estos enlaces cuando se confirme el email y el número de WhatsApp finales.
             </p>
           </div>
-        </section>
-
-        {/* Cronología — placeholder hasta recibir fechas e hitos reales */}
-        <section id="cronologia" className="mt-12">
-          <h2 className="text-xl font-bold">Cronología</h2>
-          <ol className="mt-4 space-y-4 border-s border-border ps-6">
-            <li>
-              <div className="text-xs uppercase tracking-wide opacity-60">AÑO</div>
-              <p className="text-sm">Hito breve descriptivo (máx. 100 caracteres).</p>
-            </li>
-            <li>
-              <div className="text-xs uppercase tracking-wide opacity-60">AÑO</div>
-              <p className="text-sm">Hito breve descriptivo (máx. 100 caracteres).</p>
-            </li>
-            <li>
-              <div className="text-xs uppercase tracking-wide opacity-60">AÑO</div>
-              <p className="text-sm">Hito breve descriptivo (máx. 100 caracteres).</p>
-            </li>
-          </ol>
-          <p className="mt-3 text-xs opacity-60">*Reemplazar con fechas y eventos confirmados.</p>
         </section>
 
         <footer className="mt-12 border-t pt-6 text-sm opacity-80">

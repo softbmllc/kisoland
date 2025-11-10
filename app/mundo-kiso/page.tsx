@@ -322,38 +322,50 @@ const personajes = [
 
 // Feature flags para mostrar/ocultar secciones hasta recibir contenido final
 const SHOW_TIMELINE = true;
-const SHOW_SYMBOLS = false;
+const SHOW_SYMBOLS = true;
 
 export default function Page() {
   return (
-    <main className="theme theme-mundo-kiso has-[input:checked]:overflow-hidden">
+    <main className="theme theme-mundo-kiso overflow-x-hidden">
       <div className="mx-auto max-w-6xl px-4 py-16">
         {/* Hero / Intro */}
-        <section className="rounded-3xl ring-1 ring-[var(--border)]">
+        <section className="rounded-[24px]">
+        {/* Hero / Intro nuevo bloque (ajustado) */}
+        <div className="mb-12 relative overflow-hidden rounded-[22px] pt-20 pb-14 px-10 md:pt-24 md:pb-16 md:px-16 anim-fade-in">
           <div
-            className="p-8 md:p-12 rounded-3xl overflow-hidden"
+            className="absolute inset-0"
             style={{
               background:
                 "radial-gradient(120% 120% at 10% 0%, var(--hero-accent) 0%, transparent 60%), radial-gradient(140% 140% at 90% 100%, var(--hero-primary) 0%, transparent 60%)",
             }}
-          >
-            <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--foreground)]/90">
-              MUNDO KISO
-            </p>
-            <h1 className="mt-3 ty-h1">
-              El mundo de Kiso
-            </h1>
-            <p className="mt-3 max-w-2xl ty-lead">
-              El mundo de Kiso organiza la geografía, cronología y símbolos del universo. Aquí viven los
-              personajes principales, sus hitos y las piezas que los conectan con la historia del fútbol.
-              Esta sección funciona como mapa vivo: capítulos, lugares y tiempos que se expanden con cada
-              proyecto. El objetivo es dar contexto a la obra, facilitar la lectura y ofrecer un punto de
-              entrada claro tanto para nuevos lectores como para quienes siguen el desarrollo.
-            </p>
+            aria-hidden
+          />
+          {/* Scrim inferior más leve */}
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.04)_40%,rgba(0,0,0,0.08)_100%)]" aria-hidden />
 
-            {/* Subnavegación */}
-            <nav
-              className="mt-6 -mx-2 px-2 overflow-x-auto whitespace-nowrap pb-2 md:mx-0 md:px-0 md:overflow-visible md:whitespace-normal md:pb-0 flex gap-2"
+          {/* Luz suave detrás del título */}
+          <div className="absolute top-16 left-1/3 w-[60%] h-[40%] rounded-full bg-white/5 blur-[80px]" aria-hidden />
+
+          <div className="relative z-10 max-w-4xl">
+            <p className="text-[11px] font-semibold tracking-[0.18em] text-white/85">MUNDO KISO</p>
+            <h1 className="mt-6 ty-h1 text-white">El mundo de Kiso</h1>
+            <p className="mt-5 max-w-[72ch] ty-lead text-white/90">
+              El mundo de Kiso organiza la geografía, cronología y símbolos del universo. Aquí viven los personajes principales, sus hitos y las piezas que los conectan con la historia del fútbol. Esta sección funciona como mapa vivo: capítulos, lugares y tiempos que se expanden con cada proyecto. El objetivo es dar contexto a la obra, facilitar la lectura y ofrecer un punto de entrada claro tanto para nuevos lectores como para quienes siguen el desarrollo.
+            </p>
+          </div>
+        </div>
+
+        {/* Subnavegación */}
+        {/* Mobile: barra horizontal optimizada */}
+        <div className="mt-6 md:hidden relative">
+          {/* Fades laterales */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-[var(--background)] to-transparent" aria-hidden />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-[var(--background)] to-transparent" aria-hidden />
+
+          <nav aria-label="Secciones de Mundo Kiso">
+            <ul
+              className="flex gap-2 overflow-x-auto no-scrollbar snap-x px-1"
+              style={{ WebkitOverflowScrolling: 'touch', scrollBehavior: 'smooth' }}
             >
               {[
                 ["Origen", "#origen"],
@@ -365,17 +377,50 @@ export default function Page() {
                 ["Juegos de pelota", "#juegos-de-pelota"],
                 ["Galería", "#galeria"],
               ].map(([label, href]) => (
-                <a
-                  key={href as string}
-                  href={href as string}
-                  className="text-xs rounded-full px-3 py-1 border border-[var(--border)] bg-background/70 backdrop-blur hover:bg-background/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] shrink-0 snap-start"
-                  aria-label={`Ir a ${label as string}`}
-                >
-                  {label}
-                </a>
+                <li key={href as string} className="snap-start flex-shrink-0">
+                  <a
+                    href={href as string}
+                    className="inline-flex items-center justify-center h-10 min-w-[44px] rounded-full px-4 text-[14px] font-medium bg-background/40 text-foreground/90 hover:bg-background/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
+                    aria-label={`Ir a ${label as string}`}
+                  >
+                    {label}
+                  </a>
+                </li>
               ))}
-            </nav>
-          </div>
+            </ul>
+          </nav>
+        </div>
+
+        {/* Desktop: dock centrado sticky */}
+        <div className="hidden md:flex md:sticky top-4 z-30 mt-6 justify-center">
+          <nav aria-label="Secciones de Mundo Kiso">
+            <ul className="mx-0 px-2 whitespace-nowrap pb-2 md:px-0 md:pb-0 flex justify-center gap-0 max-w-full">
+              <li className="inline-flex">
+                <div className="mx-auto w-max flex gap-2 rounded-full border border-[hsl(var(--border)/.22)] bg-background/35 backdrop-blur-sm px-3 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_4px_12px_rgba(0,0,0,0.08)]">
+                  {[
+                    ["Origen", "#origen"],
+                    ["Mapa", "#mapa"],
+                    ["Capítulos", "#capitulos"],
+                    ["Personajes", "#personajes"],
+                    ["Cronología", "#cronologia"],
+                    ["Símbolos", "#simbolos"],
+                    ["Juegos de pelota", "#juegos-de-pelota"],
+                    ["Galería", "#galeria"],
+                  ].map(([label, href]) => (
+                    <a
+                      key={href as string}
+                      href={href as string}
+                      className="text-[13px] md:text-[14px] font-medium rounded-full px-4 py-2 text-foreground/90 hover:text-foreground bg-transparent hover:bg-[hsl(var(--border)/.2)]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
+                      aria-label={`Ir a ${label as string}`}
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
           {/* Body */}
           <div className="bg-background/80 p-6 md:p-8 rounded-b-3xl">
@@ -383,77 +428,101 @@ export default function Page() {
             <section id="mapa">
               <h2 className="ty-h2">Mapa ilustrado</h2>
 
-              {/* Lightbox trigger */}
-              <input id="map-lb" type="checkbox" className="peer hidden" />
+              {/* Carrusel de capas del mundo */}
+              <div className="mt-4 relative overflow-hidden rounded-2xl border bg-card text-card-foreground">
+                {/* Pistas laterales para profundidad */}
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-card to-transparent" aria-hidden />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-card to-transparent" aria-hidden />
 
-              <figure className="mt-4 overflow-hidden rounded-xl ring-1 ring-[var(--border)]">
-                {/* Click para ampliar */}
-                <label htmlFor="map-lb" className="block cursor-zoom-in">
-                  <Image
-                    src="/mundo-kiso/mapa-ilustrado.jpg"
-                    alt="Mapa ilustrado del universo Kiso"
-                    width={1600}
-                    height={900}
-                    priority
-                    sizes="(min-width: 768px) 1024px, 100vw"
-                    className="w-full h-auto object-cover"
-                  />
-                </label>
-                <figcaption className="mt-2 flex flex-wrap items-center justify-between gap-2 px-3 pb-2 text-xs opacity-70">
-                  <span>Arte del mapa · <em>placeholder</em> (reemplazar por versión final). Leyenda pendiente: regiones, fortalezas y rutas.</span>
-                  <span>Archivo: <code>/mundo-kiso/mapa-ilustrado.jpg</code></span>
+                {/* Contenedor deslizable */}
+                <div id="carousel-mapa" className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
+{[
+  { id: 'slide-1', src: '/mundo-kiso/mapa/capa-1.jpg', alt: 'Capa 1 — Origen / Creación' },
+  { id: 'slide-2', src: '/mundo-kiso/mapa/capa-2.jpg', alt: 'Capa 2 — Fortaleza / Civilización' },
+  { id: 'slide-3', src: '/mundo-kiso/mapa/capa-3.jpg', alt: 'Capa 3 — Rutas y energía' },
+  { id: 'slide-4', src: '/mundo-kiso/mapa/capa-4.jpg', alt: 'Capa 4 — Trascendencia / Legado' },
+].map((s, idx, arr) => {
+  const prev = idx === 0 ? arr[arr.length - 1] : arr[idx - 1];
+  const next = idx === arr.length - 1 ? arr[0] : arr[idx + 1];
+  return (
+    <div key={s.id} id={s.id} className="relative snap-start shrink-0 w-full">
+      {/* Flecha izquierda */}
+      <a
+        href={`#${prev.id}`}
+        aria-label="Anterior"
+        className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-background/60 ring-1 ring-[var(--border)] text-foreground/90 hover:bg-background/80 transition"
+      >
+        ‹
+      </a>
+      {/* Flecha derecha */}
+      <a
+        href={`#${next.id}`}
+        aria-label="Siguiente"
+        className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-background/60 ring-1 ring-[var(--border)] text-foreground/90 hover:bg-background/80 transition"
+      >
+        ›
+      </a>
+
+      <Image
+        src={s.src}
+        alt={s.alt}
+        width={2000}
+        height={1333}
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        className="w-full h-auto object-cover"
+        priority={s.id === 'slide-1'}
+      />
+    </div>
+  );
+})}
+                  {/* Bullets de navegación */}
+                  <div className="flex items-center justify-center gap-2 py-3">
+                    {(
+                      [
+                        ['#slide-1', 'Ir a capa 1', 'b1'],
+                        ['#slide-2', 'Ir a capa 2', 'b2'],
+                        ['#slide-3', 'Ir a capa 3', 'b3'],
+                        ['#slide-4', 'Ir a capa 4', 'b4'],
+                      ] as const
+                    ).map(([href, aria, key], i) => (
+                      <a
+                        key={key}
+                        href={href}
+                        aria-label={aria}
+                        {...(i === 0 ? { 'data-default': 'true' } : {})}
+                        className={
+                          i === 0
+                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-1:target_~_&]:bg-white/90 data-[default=true]:bg-white/90"
+                            : i === 1
+                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-2:target_~_&]:bg-white/90"
+                            : i === 2
+                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-3:target_~_&]:bg-white/90"
+                            : "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-4:target_~_&]:bg-white/90"
+                        }
+                        data-bullet={key}
+                      >
+                        <span className="sr-only">{aria}</span>
+                      </a>
+                    ))}
+                  </div>
+                  </div>
+
+                <figcaption className="px-4 pb-3 text-[11px] opacity-60">
+                  Secuencia visual del mundo Kiso - capas: Origen, Fortaleza, Rutas y energía, Trascendencia.
                 </figcaption>
-              </figure>
-
-              {/* Overlay del lightbox */}
-              <div
-                className="pointer-events-none fixed inset-0 z-[999] hidden items-center justify-center peer-checked:flex"
-                role="dialog"
-                aria-modal="true"
-                aria-label="Mapa ilustrado ampliado"
-              >
-                <label
-                  htmlFor="map-lb"
-                  className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-zoom-out pointer-events-auto"
-                  aria-label="Cerrar"
-                />
-                <div className="relative z-10 w-full max-w-5xl p-4">
-                  <Image
-                    src="/mundo-kiso/mapa-ilustrado.jpg"
-                    alt="Mapa ilustrado del universo Kiso"
-                    width={1600}
-                    height={900}
-                    className="w-full h-auto max-h-[85vh] rounded-xl shadow-2xl"
-                    priority
-                  />
-                  <label
-                    htmlFor="map-lb"
-                    className="absolute bottom-6 right-6 inline-flex items-center rounded-md bg-white/90 px-3 py-1 text-xs font-medium text-black shadow pointer-events-auto"
-                  >
-                    Cerrar
-                  </label>
-                </div>
               </div>
-
             </section>
 
 
             {/* Relato de origen */}
             <section id="origen" className="mt-12">
               <h2 className="ty-h2">Relato de origen</h2>
-              <article className="relative overflow-hidden mt-4 w-full rounded-2xl p-6 md:p-8 border border-[var(--border)] bg-gradient-to-b from-background/80 to-background/55 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(120%_60%_at_50%_0%,rgba(255,255,255,.06)_0%,transparent_60%)] before:pointer-events-none space-y-4">
-                <p className="leading-relaxed text-[15px]">
-                  El Mundo de Kiso nace en Japón, en medio de las guerras Genpei. Kiso, samurái y visionario,
-                  entrenaba a sus guerreros con un balón de cuero, combinando la sabiduría del <em>kemari</em> y el
-                  <em> cuju</em> para forjar disciplina, precisión y concentración.
+              <div className="relative overflow-hidden mt-4 w-full rounded-2xl border bg-card text-card-foreground p-6 md:p-8 anim-fade-in">
+                <p className="text-sm opacity-80 max-w-3xl">
+                  Nacido en Japón en tiempos de guerra, el mundo de Kiso forja una idea simple: la pelota como lenguaje común. 
+                  Kiso custodia ese legado para enseñar que el verdadero triunfo vive en los valores del competidor integral.
                 </p>
-                <p className="leading-relaxed text-[15px]">
-                  Su destino cambió cuando la diosa Amaterasu le entregó el Orbe Sagrado, símbolo de inmortalidad y de un
-                  lenguaje universal: la pelota. Desde entonces, Kiso camina por el tiempo con un propósito: custodiar el
-                  juego, descifrar las gambetas del destino y enseñar que, más allá de victorias o derrotas, el verdadero
-                  legado está en los valores del competidor integral.
-                </p>
-              </article>
+              </div>
             </section>
 
             {/* Arcos / personajes */}
@@ -592,14 +661,53 @@ export default function Page() {
                   </div>
                 )}
                 {SHOW_SYMBOLS && (
-                  <div id="simbolos" className="space-y-4">
-                    <h2 className="ty-h2">Símbolos</h2>
-                    <ul className="list-disc pl-5 space-y-1.5 opacity-80">
-                      <li>Emblema Kiso — significado</li>
-                      <li>Colores — uso y lectura</li>
-                      <li>Motivos visuales — patrones y textura</li>
-                    </ul>
-                  </div>
+  <div id="simbolos" className="space-y-4">
+    <h2 className="ty-h2">Símbolos</h2>
+    <div className="grid gap-4 md:grid-cols-3">
+      {/* Emblema */}
+      <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)]">
+        <h3 className="text-[15px] font-semibold">Emblema</h3>
+        <figure className="mt-3">
+          <div className="relative w-full aspect-[4/3] rounded-xl ring-1 ring-[var(--border)] bg-background/60 flex items-center justify-center anim-shimmer">
+            <span className="text-xs opacity-70">Arte del emblema — placeholder</span>
+          </div>
+          <figcaption className="mt-2 text-xs opacity-70">Reemplazar por SVG oficial. No definir significados sin documento canónico.</figcaption>
+        </figure>
+      </article>
+
+      {/* Paleta */}
+      <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)]">
+        <h3 className="text-[15px] font-semibold">Paleta</h3>
+        <p className="mt-2 text-[13px] opacity-85">Colores derivados de tokens actuales. No modificar fuera de <code>app/brand.css</code>.</p>
+        <ul className="mt-3 grid grid-cols-3 gap-3" aria-label="Muestras de color de la paleta">
+          <li className="space-y-1">
+            <div className="h-12 rounded-md ring-1 ring-[var(--border)]" style={{background: 'var(--accent)'}} aria-hidden />
+            <div className="text-[11px] opacity-80">--accent</div>
+          </li>
+          <li className="space-y-1">
+            <div className="h-12 rounded-md ring-1 ring-[var(--border)]" style={{background: 'var(--hero-primary)'}} aria-hidden />
+            <div className="text-[11px] opacity-80">--hero-primary</div>
+          </li>
+          <li className="space-y-1">
+            <div className="h-12 rounded-md ring-1 ring-[var(--border)]" style={{background: 'var(--hero-accent)'}} aria-hidden />
+            <div className="text-[11px] opacity-80">--hero-accent</div>
+          </li>
+        </ul>
+        <p className="mt-2 text-[11px] opacity-60">*La lectura cromática final se tomará del PDF de marca.</p>
+      </article>
+
+      {/* Motivos visuales */}
+      <article className="relative overflow-hidden rounded-2xl p-6 border border-[var(--border)] bg-gradient-to-b from-background/75 to-background/50 text-foreground shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.18)] before:content-[''] before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-[hsl(var(--accent)/.35)]">
+        <h3 className="text-[15px] font-semibold">Motivos</h3>
+        <div className="mt-3 grid grid-cols-3 gap-2">
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[repeating-linear-gradient(45deg,rgba(255,255,255,.06)_0_8px,transparent_8px_16px)]" aria-label="Patrón diagonal — placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón radial — placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[linear-gradient(0deg,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón de franja — placeholder" />
+        </div>
+        <p className="mt-2 text-[11px] opacity-60">*Reemplazar por SVG y texturas oficiales cuando estén aprobados.</p>
+      </article>
+    </div>
+  </div>
                 )}
               </section>
             ) : null}

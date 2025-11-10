@@ -235,3 +235,28 @@
     --fg-strong: #ffffff;
   }
 }
+
+/* =============================
+   Animations — append-only
+   Ubicación: al final de app/brand.css
+   Notas: no tocar tokens ni temas. Solo utilidades.
+============================= */
+
+/* Keyframes base */
+@keyframes kiso-fade-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes kiso-float-slow{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes kiso-marquee-x{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes kiso-shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes kiso-ring{0%{box-shadow:0 0 0 0 color-mix(in oklab,var(--ring) 40%,transparent)}80%{box-shadow:0 0 0 10px color-mix(in oklab,var(--ring) 0%,transparent)}100%{box-shadow:0 0 0 0 color-mix(in oklab,var(--ring) 0%,transparent)}}
+
+/* Utilidades de animación */
+.anim-fade-in{animation:kiso-fade-in .6s ease-out both}
+.anim-float-slow{animation:kiso-float-slow 6s ease-in-out infinite}
+.anim-marquee{animation:kiso-marquee-x 30s linear infinite;will-change:transform}
+.anim-shimmer{background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--foreground) 6%,transparent),transparent);background-size:200% 100%;animation:kiso-shimmer 2s linear infinite}
+.anim-ring{animation:kiso-ring 1.6s ease-out infinite}
+
+/* Respeto a reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .anim-fade-in,.anim-float-slow,.anim-marquee,.anim-shimmer,.anim-ring{animation:none!important}
+}
