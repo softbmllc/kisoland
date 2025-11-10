@@ -1,4 +1,6 @@
 // app/mundo-kiso/page.tsx
+import Timeline from '@/components/Timeline';
+import { MUNDO_KISO_TIMELINE } from './timeline.data';
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -319,7 +321,7 @@ const personajes = [
 ] as const;
 
 // Feature flags para mostrar/ocultar secciones hasta recibir contenido final
-const SHOW_TIMELINE = false;
+const SHOW_TIMELINE = true;
 const SHOW_SYMBOLS = false;
 
 export default function Page() {
@@ -586,11 +588,7 @@ export default function Page() {
                 {SHOW_TIMELINE && (
                   <div id="cronologia" className="space-y-4">
                     <h2 className="ty-h2">Cronología</h2>
-                    <ol className="list-decimal pl-5 space-y-1.5 opacity-80">
-                      <li>Acontecimiento clave 1 (año)</li>
-                      <li>Acontecimiento clave 2 (año)</li>
-                      <li>Acontecimiento clave 3 (año)</li>
-                    </ol>
+                    <Timeline heading="Cronología del Mundo Kiso" items={MUNDO_KISO_TIMELINE} />
                   </div>
                 )}
                 {SHOW_SYMBOLS && (

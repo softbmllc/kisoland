@@ -55,6 +55,11 @@ const Page: NextPage = () => {
                 className="rounded-xl object-cover object-[center_35%] ring-1 ring-[color:var(--border)] shadow-md"
               />
               <div
+                className="pointer-events-none absolute inset-0 rounded-xl backdrop-saturate-90 backdrop-brightness-90"
+                aria-hidden
+                style={{ opacity: 0.9 }}
+              />
+              <div
                 className="pointer-events-none absolute inset-0 rounded-xl mix-blend-multiply"
                 style={{
                   opacity: 0.18,
@@ -66,7 +71,7 @@ const Page: NextPage = () => {
             <div className="relative z-10 max-w-2xl">
               <p className="text-[10px] font-semibold tracking-[0.18em] text-[var(--foreground)]/90">FOCUS PENALTY</p>
               <h1 className="mt-3 ty-h1">Focus Penalty</h1>
-              <p className="mt-3 max-w-2xl ty-lead">
+              <p className="mt-3 max-w-2xl ty-lead tracking-[0.01em] leading-[1.65]">
                 Focus Penalty es una herramienta de conexión y reflexión que, a partir de preguntas esenciales,
                 abre un diálogo global. Buscamos que cualquiera se reconozca en la universalidad del fútbol y
                 en la emoción de un instante decisivo: el penalti. Es la antesala del Mundial de Penaltis:
@@ -97,7 +102,7 @@ const Page: NextPage = () => {
         </header>
 
         {/* Estructura del entrenamiento */}
-        <section id="estructura" role="region" aria-labelledby="estructura-h" className="mt-8">
+        <section id="estructura" role="region" aria-labelledby="estructura-h" className="mt-12 md:mt-16">
           <h2 id="estructura-h" className="ty-h2 tracking-normal leading-tight mb-3 text-[clamp(1.4rem,2vw,1.75rem)]">Estructura del entrenamiento</h2>
           <div className="mt-3 grid gap-10 md:grid-cols-2">
             {[
@@ -118,7 +123,7 @@ const Page: NextPage = () => {
                 v: "Respiración, feedback rápido y registro de métricas básicas.",
               },
             ].map((it) => (
-              <Card key={it.t} title={it.t} accent={false} className="transition-transform duration-150 hover:scale-[1.01]">
+              <Card key={it.t} title={it.t} accent={false} className="transition-transform duration-150 hover:scale-[1.01] hover:shadow-[var(--shadow-lg)]">
                 <p className="text-[15px] md:text-sm leading-snug max-w-[58ch]">{it.v}</p>
               </Card>
             ))}
@@ -126,7 +131,7 @@ const Page: NextPage = () => {
         </section>
 
         {/* Ejercicios de práctica */}
-        <section id="drills" role="region" aria-labelledby="drills-h" className="mt-12">
+        <section id="drills" role="region" aria-labelledby="drills-h" className="mt-16">
           <h2 id="drills-h" className="ty-h2 tracking-normal leading-tight mb-3 text-[clamp(1.4rem,2vw,1.75rem)]">Ejercicios de práctica</h2>
           <div className="mt-3 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
@@ -171,7 +176,7 @@ const Page: NextPage = () => {
                 key={drill.name}
                 title={drill.name}
                 accent={false}
-                className="transition-transform duration-150 hover:scale-[1.01]"
+                className="transition-transform duration-150 hover:scale-[1.01] hover:shadow-[var(--shadow-lg)]"
               >
                 <div className="max-w-[52ch]">
                   <ul className="space-y-1.5 leading-snug">
@@ -188,7 +193,7 @@ const Page: NextPage = () => {
 
         {/* CTA final */}
         <section className="mt-0 pt-12">
-          <Card title="¿Listos para practicar?" accent={false} className="rounded-lg ring-[var(--border)]/18 shadow-[0_6px_16px_rgba(0,0,0,0.06)]">
+          <Card title="¿Listos para practicar?" accent={false} className="rounded-lg ring-[var(--border)]/18 shadow-[0_6px_16px_rgba(0,0,0,0.06),0_-1px_0_rgba(255,255,255,0.05),0_-24px_32px_rgba(0,0,0,0.4)]">
             <p className="max-w-[56ch] leading-[1.55]">
               Podemos compartirte la guía completa en PDF o coordinar una demo.
             </p>
