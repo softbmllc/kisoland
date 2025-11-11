@@ -141,3 +141,26 @@ Autor: Equipo KISOLAND — 2025
 - [ ] Generar release v1.0.0 con deploy a producción (Vercel).
 
 ---
+
+## 📦 Release v1.0.0 — Mundo Kiso + Refinamiento global
+
+### Cambios principales (2025‑11‑10)
+- **Mundo Kiso**: estructura y look & feel estabilizados (hero, relato, cronología, arcos, galería, juegos). Coherencia visual AA en light/dark.
+- **Theming**: tokens consolidados en `app/brand.css` (`--surface`, `--surface-alt`, `--foreground`, `--ink`, `--border`, `--surface-foreground`).
+- **Cronología**: rediseñada con jerarquía editorial, marcadores blancos en dark mode, mayor separación e interacción accesible.
+- **Relato de origen**: card crema premium (`bg-[var(--surface)]` + `ring-1` + `shadow`) con drop cap sutil, subtítulo “Japón · Era Genpei”.
+- **Juegos de pelota**: cards coherentes con el sistema de diseño, tipografía editorial, CTA “Ver todos los juegos →”, nueva subpágina `/mundo-kiso/juegos` con catálogo ampliado (Ōllamaliztli, Harpastum, Calcio, Sepak, etc.).
+- **Galería**: carrusel accesible con bullets, flechas y `figcaption`; preparado para imágenes canónicas desde *El espíritu de la montaña* y *Planet Ball*.
+- **Símbolos**: cards de identidad restilizadas pero desactivadas por defecto (`SHOW_SYMBOLS=false`) hasta contar con arte final.
+- **Dark mode**: tokens corregidos en `brand.css` para contraste AA (sin toggle manual, depende de `prefers-color-scheme`).
+
+### Estado
+✅ Mundo Kiso listo para QA final.  
+✅ Tokens coherentes en light/dark.  
+⚠️ Pendiente: integrar imágenes oficiales, OG finales y documentación UI en `/docs/ui`.
+
+### Próximos pasos (Sprint v1.1.0)
+1. Integrar assets canónicos (mapa, personajes, símbolos).  
+2. Generar OG definitivos para *Indumentaria* y *Competidor Integral*.  
+3. QA visual, Lighthouse ≥95, y documentación UI.  
+4. Preparar release v1.1.0.

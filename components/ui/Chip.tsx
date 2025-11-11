@@ -28,13 +28,13 @@ export default function Chip({
     <Tag
       className={cn(
         "inline-flex items-center rounded-full border ring-inset",
-        "border-[color:var(--border)] bg-[color:var(--surface-alt)] text-[color:var(--fg-muted)]",
+        "border-[var(--border)] bg-[var(--surface-alt)] text-[var(--fg-muted)]",
         size === "sm" ? "px-3 py-1 text-xs" : "px-4 py-1.5 text-sm",
         selected &&
-          "border-[color:var(--primary)] bg-[color:var(--primary-weak)] text-[color:var(--primary-contrast)]",
+          "border-[var(--primary)] bg-[var(--primary-weak)] text-[var(--primary-contrast)]",
         // Estados
-        "transition-colors hover:bg-[color:var(--surface-hover)]",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)]",
+        "transition-colors hover:bg-[var(--surface-hover)]",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
         className
       )}
       {...props}

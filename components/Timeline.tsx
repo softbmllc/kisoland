@@ -36,27 +36,27 @@ export default function Timeline({ items, heading, className, compact }: Timelin
 
       <ol
         className={clsx(
-          'relative border-s border-s-foreground/10 ps-6',
-          compact ? 'space-y-6' : 'space-y-10'
+          'relative border-s ps-14 border-[var(--border)]/70',
+          compact ? 'space-y-8 ps-14' : 'space-y-10 ps-14'
         )}
       >
         {items.map((it) => (
-          <li key={it.id} className="relative">
+          <li key={it.id} className="relative pb-6">
             {/* Nodo */}
             <span
               aria-hidden
-              className="absolute -start-[7px] top-1.5 size-3 rounded-full bg-primary ring-2 ring-background"
+              className="absolute -start-[18px] top-2 w-3 h-3 rounded-full bg-[var(--accent)]/90 dark:bg-white ring-1 ring-[var(--border)] dark:ring-white/40 outline outline-2 outline-[var(--surface)]"
             />
 
             <article className="grid gap-3 sm:grid-cols-[auto,1fr]">
               <header className="sm:col-span-2">
                 <time
                   dateTime={yearToDateTime(it.year)}
-                  className="inline-flex items-center gap-2 text-sm text-foreground/70"
+                  className="inline-flex items-center gap-2 text-[15px] font-medium text-foreground"
                 >
-                  <span className="font-mono tabular-nums">{formatYear(it.year)}</span>
-                  <span aria-hidden>•</span>
-                  <span className="font-medium text-foreground">{it.title}</span>
+                  <span className="font-mono font-semibold tabular-nums">{formatYear(it.year)}</span>
+                  <span aria-hidden className="text-foreground/40 mx-2">-</span>
+                  <span className="font-semibold tracking-tight text-foreground">{it.title}</span>
                 </time>
               </header>
 
@@ -78,11 +78,11 @@ export default function Timeline({ items, heading, className, compact }: Timelin
                 </div>
               )}
 
-              <div className="text-base leading-relaxed sm:self-center">
-                <p className="text-foreground/90">{it.summary}</p>
+              <div className="text-base leading-relaxed sm:self-center max-w-[66ch]">
+                <p className="text-foreground/95">{it.summary}</p>
                 <div className="mt-2 flex flex-wrap items-center gap-3">
                   {it.arc && (
-                    <span className="rounded-full bg-primary/10 px-2 py-1 text-xs text-primary">
+                    <span className="rounded-[9999px] px-2.5 py-[3px] text-xs font-medium bg-[var(--surface-alt)] text-foreground/85 ring-1 ring-[var(--border)]/40">
                       {it.arc}
                     </span>
                   )}

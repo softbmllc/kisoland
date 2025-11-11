@@ -29,23 +29,23 @@ export default function Card({
       className={cx(
         "ui-card",
         // superficie y tipografía tokenizadas
-        "rounded-2xl bg-[color:var(--surface)] text-[color:var(--fg,var(--foreground))]",
+        "rounded-2xl bg-[var(--surface)] text-[var(--fg,var(--foreground))]",
         // borde y sombra desde tokens
-        "ring-1 ring-inset ring-[color:var(--border)] shadow-[var(--shadow-md)]",
+        "ring-1 ring-inset ring-[var(--border)] shadow-[var(--shadow-md)]",
         // transiciones sin trasladar el layout
         "transition-shadow duration-200",
         // interacción opcional
         interactive &&
-          "cursor-pointer hover:shadow-[var(--shadow-lg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--ring)]",
+          "cursor-pointer hover:shadow-[var(--shadow-lg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
         className
       )}
     >
       {accent && (
-        <div className="h-1 w-full rounded-t-2xl bg-[color:var(--accent,var(--primary))]/40" />
+        <div className="h-1 w-full rounded-t-2xl bg-[var(--accent,var(--primary))]/40" />
       )}
       <div className="p-5 md:p-6">
         {title ? (
-          <h3 className="font-serif font-bold tracking-tight text-lg md:text-xl text-[color:var(--fg-strong,var(--foreground))] mb-2">
+          <h3 className="font-serif font-bold tracking-tight text-lg md:text-xl text-[var(--fg-strong,var(--foreground))] mb-2">
             {title}
           </h3>
         ) : null}

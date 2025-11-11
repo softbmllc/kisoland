@@ -79,6 +79,7 @@
 
     --background: var(--brand-bg);
     --foreground: var(--brand-ink);
+    --ink: var(--brand-ink);
     --muted: color-mix(in oklab, var(--brand-secondary) 20%, black);
     --muted-foreground: color-mix(in oklab, var(--brand-ink) 60%, #B8B8B8);
     --border: color-mix(in oklab, var(--foreground) 28%, transparent);
@@ -140,6 +141,12 @@
   /* fuentes por tema */
   --font-heading: var(--font-libre), "Libre Baskerville","Baskerville","Big Caslon","Shree 714","Georgia","Times New Roman",serif;
   --font-body: var(--font-sans);
+
+  /* superficies para cards (light) */
+  --surface: #e9dfd2;         /* crema cálido sobre terracota */
+  --surface-alt: #e2d6c6;     /* variante secundaria */
+  --surface-foreground: #1f1f1f; /* tinta para texto en surface */
+  --border: rgba(0,0,0,0.16);  /* borde más visible en crema */
 }
 
 .theme-orbe-sagrado{
@@ -234,6 +241,33 @@
     --fg-muted: #b0b0b0;
     --fg-strong: #ffffff;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-mundo-kiso:not(.light):not(.dark) {
+    /* superficies para cards (dark) */
+    --surface: #0f1011;             /* base de tarjetas */
+    --surface-alt: #151719;         /* contenedor interno */
+    --surface-foreground: rgba(255,255,255,.92); /* tinta sobre surface */
+    --foreground: rgba(255,255,255,.92);         /* texto general */
+    --ink: var(--foreground); /* headings usan el mismo tono que el texto en dark */
+    --border: rgba(255,255,255,0.14);            /* contornos más visibles */
+  }
+}
+
+/* === Dark mode overrides for manual toggle (html.dark) === */
+:root.dark{
+  --background: #0b0c0f;
+  --foreground: #e8e8ea;
+  --ink: #e8e8ea;
+}
+.dark .theme-mundo-kiso{
+  --surface: #1a1b1e;
+  --surface-alt: #24262b;
+  --border: rgba(255,255,255,0.14);
+  --foreground: #e8e8ea;
+  --surface-foreground: #e8e8ea;
+  --ink: #e8e8ea;
 }
 
 /* =============================
