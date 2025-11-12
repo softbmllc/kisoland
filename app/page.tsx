@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 
 import HomeHero from "@/components/HomeHero";
 import HomeChapters from "@/components/Home/HomeChapters";
-import HomeHighlights from "@/components/Home/HomeHighlights";
 import HomeEditorial from "@/components/Home/HomeEditorial";
 import HomeCTA from "@/components/Home/HomeCTA";
 
@@ -34,7 +33,6 @@ export default function Home() {
     <main className="theme theme-home bg-[var(--background)] text-[var(--foreground)]">
       <HomeHero />
       <HomeChapters />
-      <HomeHighlights />
       <HomeEditorial />
       <HomeCTA />
     </main>

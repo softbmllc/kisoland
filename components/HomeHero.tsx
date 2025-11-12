@@ -20,6 +20,15 @@ export default function HomeHero() {
             decoding="async"
             className="object-cover object-[40%_50%] select-none"
           />
+          {/* Light veil to ensure AA in light mode */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 dark:hidden"
+            style={{
+              background: "rgba(0,0,0,0.18)",
+              mixBlendMode: "multiply",
+            }}
+          />
           {/* Gradiente SOLO en la franja del hero (más denso en mobile/light) */}
           <div
             aria-hidden="true"
@@ -27,6 +36,16 @@ export default function HomeHero() {
             style={{
               background:
                 "linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.44) 32%, rgba(0,0,0,0.24) 60%, rgba(0,0,0,0.08) 80%, rgba(0,0,0,0.00) 92%)",
+              mixBlendMode: "multiply",
+            }}
+          />
+          {/* Dark: stronger mobile gradient for AA */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 hidden dark:block md:hidden"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.48) 32%, rgba(0,0,0,0.26) 60%, rgba(0,0,0,0.10) 80%, rgba(0,0,0,0.00) 92%)",
               mixBlendMode: "multiply",
             }}
           />
@@ -39,6 +58,16 @@ export default function HomeHero() {
               mixBlendMode: "multiply",
             }}
           />
+          {/* Dark: stronger desktop gradient for AA */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 hidden dark:block md:block"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.46) 28%, rgba(0,0,0,0.22) 52%, rgba(0,0,0,0.10) 70%, rgba(0,0,0,0.00) 86%)",
+              mixBlendMode: "multiply",
+            }}
+          />
           {/* Scrim focal para mejorar lectura del copy (sólo lado izquierdo) */}
           <div
             aria-hidden="true"
@@ -46,6 +75,16 @@ export default function HomeHero() {
             style={{
               background:
                 "linear-gradient(90deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.34) 40%, rgba(0,0,0,0.12) 66%, rgba(0,0,0,0.00) 86%)",
+              mixBlendMode: "multiply",
+            }}
+          />
+          {/* Dark: stronger left scrim */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 left-0 w-[56%] hidden dark:block"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.38) 40%, rgba(0,0,0,0.12) 66%, rgba(0,0,0,0.00) 86%)",
               mixBlendMode: "multiply",
             }}
           />
@@ -66,7 +105,7 @@ export default function HomeHero() {
             <div className="mt-2 flex flex-wrap gap-2">
               <Link
                 href="/mundo-kiso"
-                className="inline-flex w-full md:w-auto justify-center items-center gap-2 rounded-full min-h-[44px] px-5 py-2 text-sm font-semibold text-[var(--btn-fg)] bg-[var(--btn-bg)] ring-1 ring-[var(--btn-border)] shadow-[var(--btn-shadow)] hover:shadow-[var(--btn-shadow-hover)] active:translate-y-[1px] md:text-[var(--background)] md:bg-white md:ring-white/20 md:shadow-none md:hover:bg-white/90"
+                className="inline-flex w-full md:w-auto justify-center items-center gap-2 rounded-full min-h-[44px] px-5 py-2 text-sm font-semibold text-[var(--btn-fg)] bg-[var(--btn-bg)] ring-1 ring-[var(--btn-border)] shadow-[var(--btn-shadow)] hover:shadow-[var(--btn-shadow-hover)] active:translate-y-[1px] dark:bg-white md:bg-white md:ring-white/20 md:shadow-none md:hover:bg-white/90"
                 aria-label="Ir a Mundo Kiso"
               >
                 Entrar a Mundo Kiso

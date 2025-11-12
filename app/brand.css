@@ -13,8 +13,8 @@
   --background: var(--brand-bg);
   --foreground: var(--brand-ink);
   --muted: color-mix(in oklab, var(--brand-secondary) 12%, white);
-  --muted-foreground: var(--brand-secondary);
-  --border: color-mix(in oklab, var(--foreground) 14%, transparent);
+  --muted-foreground: color-mix(in oklab, var(--brand-ink) 72%, var(--brand-secondary));
+  --border: color-mix(in oklab, var(--foreground) 18%, transparent);
   --card: var(--background);
   --card-foreground: var(--foreground);
   --popover: var(--background);
@@ -110,8 +110,8 @@
 /* Home — neutral (define surface/border for better separation in light & dark) */
 .theme-home{
   /* In light: surface slightly darker than background for subtle card plane */
-  --surface: color-mix(in oklab, var(--background) 92%, black);
-  --surface-alt: color-mix(in oklab, var(--surface) 92%, black);
+  --surface: color-mix(in oklab, var(--background) 90%, black);
+  --surface-alt: color-mix(in oklab, var(--surface) 88%, black);
   --surface-foreground: var(--foreground);
   /* Lift border a bit for AA on light */
   --border: color-mix(in oklab, var(--foreground) 22%, transparent);
@@ -138,8 +138,8 @@
     --surface-foreground: var(--foreground);
 
     /* controls — dark */
-    --btn-bg:      color-mix(in oklab, var(--surface) 88%, white);
-    --btn-fg:      var(--surface-foreground);
+    --btn-bg:      #ffffff;
+    --btn-fg:      #111315;
     --btn-border:  rgba(255,255,255,0.20);
     --btn-shadow:        0 1px 0 rgba(255,255,255,0.10) inset, 0 1px 1px rgba(0,0,0,0.50), 0 2px 6px rgba(0,0,0,0.60);
     --btn-shadow-hover:  0 1px 0 rgba(255,255,255,0.18) inset, 0 2px 8px rgba(0,0,0,0.60);
