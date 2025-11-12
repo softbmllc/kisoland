@@ -33,6 +33,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
+      <head>
+        <link rel="preload" as="font" href="/fonts/libre-baskerville-latin-700.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/libre-baskerville-latin-400.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/comic-neue-latin-700.woff2" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body className={`${libre.variable} ${comic.variable} min-h-screen bg-background text-foreground`}>
         <SiteHeader />
         {children}

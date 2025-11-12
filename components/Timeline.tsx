@@ -36,8 +36,8 @@ export default function Timeline({ items, heading, className, compact }: Timelin
 
       <ol
         className={clsx(
-          'relative border-s ps-14 border-[var(--border)]/70',
-          compact ? 'space-y-8 ps-14' : 'space-y-10 ps-14'
+          'relative border-s ps-8 sm:ps-14 border-[var(--border)]/70',
+          compact ? 'space-y-7 ps-8 sm:space-y-8 sm:ps-14' : 'space-y-8 ps-8 sm:space-y-10 sm:ps-14'
         )}
       >
         {items.map((it) => (
@@ -45,7 +45,7 @@ export default function Timeline({ items, heading, className, compact }: Timelin
             {/* Nodo */}
             <span
               aria-hidden
-              className="absolute -start-[18px] top-2 w-3 h-3 rounded-full bg-[var(--accent)]/90 dark:bg-white ring-1 ring-[var(--border)] dark:ring-white/40 outline outline-2 outline-[var(--surface)]"
+              className="hidden sm:block absolute -start-[14px] sm:-start-[18px] top-[0.48em] sm:top-[0.42em] w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[var(--foreground)] dark:bg-white ring-1 ring-[var(--border)] dark:ring-white/50 outline outline-2 outline-[var(--surface)]"
             />
 
             <article className="grid gap-3 sm:grid-cols-[auto,1fr]">

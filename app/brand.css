@@ -27,6 +27,10 @@
   --accent-foreground: #0F0F0F;
   --ring: var(--brand-primary);
   --ink: var(--brand-ink);
+  /* Surfaces neutrales de fallback para HOME */
+  --surface: var(--card, var(--background));
+  --surface-alt: color-mix(in oklab, var(--surface) 92%, black);
+  --surface-foreground: var(--foreground);
 
   /* Hero gradient tokens (light) */
   --hero-accent: var(--accent);
@@ -91,6 +95,10 @@
     --secondary-foreground: #111315;
     --accent-foreground: #111315;
     --ring: color-mix(in oklab, var(--brand-primary) 70%, white);
+    /* Surfaces neutrales de fallback para HOME (dark) */
+    --surface: var(--card);
+    --surface-alt: color-mix(in oklab, var(--surface) 92%, white);
+    --surface-foreground: var(--foreground);
 
     /* Hero gradient tokens (dark) */
     --hero-accent: color-mix(in oklab, var(--accent) 60%, black);
@@ -99,6 +107,49 @@
 }
 
 /* ========= THEME HOOKS POR SECCIÓN (valores del cliente) ========= */
+/* Home — neutral (define surface/border for better separation in light & dark) */
+.theme-home{
+  /* In light: surface slightly darker than background for subtle card plane */
+  --surface: color-mix(in oklab, var(--background) 92%, black);
+  --surface-alt: color-mix(in oklab, var(--surface) 92%, black);
+  --surface-foreground: var(--foreground);
+  /* Lift border a bit for AA on light */
+  --border: color-mix(in oklab, var(--foreground) 22%, transparent);
+
+  /* controls — light */
+  --btn-bg:      color-mix(in oklab, var(--surface) 96%, white);
+  --btn-fg:      var(--surface-foreground);
+  --btn-border:  color-mix(in oklab, var(--foreground) 18%, transparent);
+  --btn-shadow:        0 1px 0 rgba(255,255,255,0.28) inset, 0 1px 1px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.10);
+  --btn-shadow-hover:  0 1px 0 rgba(255,255,255,0.36) inset, 0 2px 8px rgba(0,0,0,0.12);
+  --btn-shadow-active: 0 0   0 rgba(255,255,255,0.00) inset, 0 1px 2px rgba(0,0,0,0.12) inset;
+
+  --chip-bg:     color-mix(in oklab, var(--surface) 94%, white);
+  --chip-fg:     color-mix(in oklab, var(--surface-foreground) 90%, black);
+  --chip-border: color-mix(in oklab, var(--foreground) 16%, transparent);
+}
+@media (prefers-color-scheme: dark){
+  .theme-home{
+    /* In dark: surface slightly lighter than background to avoid merging */
+    --surface:       color-mix(in oklab, var(--background) 85%, white);
+    --surface-alt:   color-mix(in oklab, var(--surface) 88%, white);
+    /* Make border visible on dark */
+    --border:        rgba(255,255,255,0.16);
+    --surface-foreground: var(--foreground);
+
+    /* controls — dark */
+    --btn-bg:      color-mix(in oklab, var(--surface) 88%, white);
+    --btn-fg:      var(--surface-foreground);
+    --btn-border:  rgba(255,255,255,0.20);
+    --btn-shadow:        0 1px 0 rgba(255,255,255,0.10) inset, 0 1px 1px rgba(0,0,0,0.50), 0 2px 6px rgba(0,0,0,0.60);
+    --btn-shadow-hover:  0 1px 0 rgba(255,255,255,0.18) inset, 0 2px 8px rgba(0,0,0,0.60);
+    --btn-shadow-link:   0 0 0 rgba(0,0,0,0.0);
+
+    --chip-bg:     color-mix(in oklab, var(--surface) 88%, white);
+    --chip-fg:     color-mix(in oklab, var(--surface-foreground) 100%, white);
+    --chip-border: rgba(255,255,255,0.20);
+  }
+}
 /* Nota: corregimos dos typos para que sean HEX válidos:
    #65c71  → #065c71
    #3f6fla → #3f6f1a
@@ -294,3 +345,18 @@
 @media (prefers-reduced-motion: reduce){
   .anim-fade-in,.anim-float-slow,.anim-marquee,.anim-shimmer,.anim-ring{animation:none!important}
 }
+
+/* === Gallery bullets active state (CSS-only, con :target en el carrusel) === */
+#carousel-galeria:not(:has(:target)) .gal-dots [data-bullet="g1"] { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g1:target)  .gal-dots [data-bullet="g1"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g2:target)  .gal-dots [data-bullet="g2"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g3:target)  .gal-dots [data-bullet="g3"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g4:target)  .gal-dots [data-bullet="g4"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g5:target)  .gal-dots [data-bullet="g5"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g6:target)  .gal-dots [data-bullet="g6"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g7:target)  .gal-dots [data-bullet="g7"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g8:target)  .gal-dots [data-bullet="g8"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g9:target)  .gal-dots [data-bullet="g9"]  { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g10:target) .gal-dots [data-bullet="g10"] { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g11:target) .gal-dots [data-bullet="g11"] { background-color: rgba(255,255,255,0.9); }
+#carousel-galeria:has(#g12:target) .gal-dots [data-bullet="g12"] { background-color: rgba(255,255,255,0.9); }

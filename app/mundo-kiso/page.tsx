@@ -400,7 +400,7 @@ export default function Page() {
           <nav aria-label="Secciones de Mundo Kiso">
             <ul className="mx-0 px-2 whitespace-nowrap pb-2 md:px-0 md:pb-0 flex justify-center gap-0 max-w-full">
               <li className="inline-flex">
-                <div className="mx-auto w-max flex gap-2 rounded-full border border-[hsl(var(--border)/.22)] bg-background/35 backdrop-blur-sm px-3 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_4px_12px_rgba(0,0,0,0.08)]">
+                <div className="mx-auto w-max flex gap-2 rounded-full border border-[hsl(var(--border)/.14)] bg-background/25 backdrop-blur-[2px] px-3 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_3px_10px_rgba(0,0,0,0.06)]">
                   {[
                     ["Origen", "#origen"],
                     ["Mapa", "#mapa"],
@@ -414,7 +414,7 @@ export default function Page() {
                     <a
                       key={href as string}
                       href={href as string}
-                      className="text-[13px] md:text-[14px] font-medium rounded-full px-4 py-2 text-foreground/90 hover:text-foreground bg-transparent hover:bg-[hsl(var(--border)/.2)]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
+                      className="text-[13px] md:text-[14px] font-medium tracking-[0.01em] rounded-full px-4 py-2 text-foreground/90 hover:text-foreground bg-transparent hover:bg-[hsl(var(--border)/.18)]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
                       aria-label={`Ir a ${label as string}`}
                     >
                       {label}
@@ -1017,25 +1017,24 @@ export default function Page() {
 
                 {/* Bullets */}
                 <div
-                  className="flex items-center justify-center gap-2 py-3"
+                  className="flex items-center justify-center gap-2 py-3 gal-dots"
                   role="tablist"
                   aria-label="Paginación de galería"
                 >
-                  {mkItems.map((_, i) => (
-                    <a
-                      key={`b${i}`}
-                      href={`#g${i + 1}`}
-                      aria-label={`Ir a imagen ${i + 1}`}
-                      {...(i === 0 ? { 'data-default': 'true' } : {})}
-                      className={
-                        i === 0
-                          ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-white/90 [#g1:target_~_&]:bg-white/90"
-                          : `inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-white/40 hover:bg-white/70 [#g${i + 1}:target_~_&]:bg-white`
-                      }
-                    >
-                      <span className="sr-only">Ir a imagen {i + 1}</span>
-                    </a>
-                  ))}
+                  {mkItems.map((_, i) => {
+                    const gid = `g${i + 1}`;
+                    return (
+                      <a
+                        key={gid}
+                        href={`#${gid}`}
+                        aria-label={`Ir a imagen ${i + 1}`}
+                        data-bullet={gid}
+                        className="inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-white/40 hover:bg-white/70"
+                      >
+                        <span className="sr-only">{`Ir a imagen ${i + 1}`}</span>
+                      </a>
+                    );
+                  })}
                 </div>
 
                 <figcaption className="px-4 pb-3 text-[11px] opacity-60">
