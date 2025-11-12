@@ -27,7 +27,7 @@ node scripts/trim-personajes.mjs
 ## Estructura relevante
 ```
 app/
-  ├─ page.tsx                       # Home (hero, módulos, 4 thumbs MK)
+  ├─ page.tsx                       # Home (Hero → Chapters → Editorial → CTA)
   ├─ galeria/page.tsx               # Masonry + lightbox; soporta ImageKit
   ├─ mundo-kiso/page.tsx            # Hero + mapa (lightbox) + relato + arcos + personajes + juegos + CTA galería
   ├─ coleccion-del-orbe-sagrado/page.tsx  # Collage hero + destacados + copy
@@ -44,7 +44,12 @@ app/
 components/
   ├─ SiteHeader.tsx | SiteFooter.tsx
   ├─ OrbeCollage.tsx
-  └─ (varios de Home)
+  ├─ HomeHero.tsx
+  ├─ Home/
+  │    ├─ HomeChapters.tsx
+  │    ├─ HomeEditorial.tsx
+  │    ├─ HomeCTA.tsx
+  │    └─ (HomeHighlights opcional — oculto por defecto)
 public/
   ├─ brand/mark-dark.svg | mark-light.svg
   ├─ mundo-kiso/mapa-ilustrado.jpg     # placeholder (lightbox)
@@ -56,6 +61,7 @@ public/
 - Tokens base (`--background`, `--foreground`, `--primary`, etc.).
 - Temas por sección (ej. `.theme-mundo-kiso`).
 - Usamos superficies **tintadas** con gradiente sutil + sombra limpia para look premium coherente.
+- Home usa .theme-home (tokens: --surface, --border, --btn-bg/fg/border/shadow, --chip-bg/fg/border).
 
 ---
 
@@ -81,11 +87,18 @@ public/
 - **sitemap.ts** básico.
 - **Favicons** (`public/favicon.svg` + `public/favicon-512.png`).
 
+### Home
+- Nueva estructura: Hero → Chapters (6 cards) → Editorial → CTA.
+- Cápsulas responsive dentro de la imagen en mobile; estilo editorial en desktop.
+- Cards 4:3 con miniaturas en /public/cards/*.jpg.
+- Botones tokenizados (--btn-*), contraste AA en light/dark.
+
 ---
 
 ## Contenido cargado
 - **Personajes** (principales, inmortales y deidades) con **roles + bios** desde el doc del cliente.
 - **Textos verificados** para *Kisolab*, *Orbe Sagrado* y *Focus Penalty*.
+- Miniaturas 4:3 para Home en /public/cards/*.jpg (1200×900, sRGB).
 
 ## Pendientes (cliente)
 1) **Mapa ilustrado** final (JPG 2400×1600 sRGB, sin texto/logos, \~30% aire arriba).
@@ -104,6 +117,7 @@ public/
   ```ts
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000')
   ```
+- Actualizar documentación UI en README para componentes Home (Chapters, Editorial, CTA).
 
 ## Glosario rápido
 - **Arco (narrativo)**: capítulo grande del universo (título + sinopsis + periodo).
