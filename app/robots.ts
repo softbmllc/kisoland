@@ -1,4 +1,4 @@
-// app/robots.ts — noindex en preview
+// app/robots.ts - noindex en preview
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {

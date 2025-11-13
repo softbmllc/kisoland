@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HomeHero() {
   return (
-    <section aria-label="Hero — El universo de Kiso" className="mx-auto px-4 md:px-0 md:max-w-6xl py-16 md:py-28">
+    <section aria-label="Hero - El universo de Kiso" className="mx-auto px-4 md:px-0 md:max-w-6xl py-16 md:py-28">
       {/* Contenedor del hero: superficie unificada + ring + sombra */}
       <div className="relative isolate overflow-hidden rounded-3xl ring-1 ring-[var(--border)] shadow-sm bg-[var(--surface)]">
         {/* Media: 4:3 en mobile, 16:9 en desktop. La imagen es el LCP */}

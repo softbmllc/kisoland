@@ -1,6 +1,6 @@
 
 
-// tailwind.config.ts — v3
+// tailwind.config.ts - v3
 import type { Config } from "tailwindcss";
 
 const config: Config = {

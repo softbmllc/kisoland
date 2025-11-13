@@ -7,21 +7,21 @@ import Card from "@/components/ui/Card";
 import Chip from "@/components/ui/Chip";
 
 export const metadata: Metadata = {
-  title: "El mundo de Kiso — KISOLAND",
+  title: "El mundo de Kiso - KISOLAND",
   description:
     "Geografía, cronología, personajes y símbolos que estructuran el universo Kiso.",
   alternates: { canonical: "/mundo-kiso" },
   openGraph: {
-    title: "El mundo de Kiso — KISOLAND",
+    title: "El mundo de Kiso - KISOLAND",
     description:
       "Geografía, cronología, personajes y símbolos que estructuran el universo Kiso.",
     images: [
-      { url: "/og/mundo-kiso.jpg", width: 1200, height: 630, alt: "El mundo de Kiso — KISOLAND" },
+      { url: "/og/mundo-kiso.jpg", width: 1200, height: 630, alt: "El mundo de Kiso - KISOLAND" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "El mundo de Kiso — KISOLAND",
+    title: "El mundo de Kiso - KISOLAND",
     description:
       "Geografía, cronología, personajes y símbolos que estructuran el universo Kiso.",
     images: ["/og/mundo-kiso.jpg"],
@@ -45,9 +45,9 @@ const mkItems = [
 
 // Personajes (PNG sin fondo en /public/personajes/<slug>/<slug>.png)
 const arcos = [
-  { slug: 'arco-1', title: 'Arco 1 — título en preparación', synopsis: 'Sinopsis breve (70–100 palabras) — placeholder.' },
-  { slug: 'arco-2', title: 'Arco 2 — título en preparación', synopsis: 'Sinopsis breve (70–100 palabras) — placeholder.' },
-  { slug: 'arco-3', title: 'Arco 3 — título en preparación', synopsis: 'Sinopsis breve (70–100 palabras) — placeholder.' },
+  { slug: 'arco-1', title: 'Arco 1 - título en preparación', synopsis: 'Sinopsis breve (70–100 palabras) - placeholder.' },
+  { slug: 'arco-2', title: 'Arco 2 - título en preparación', synopsis: 'Sinopsis breve (70–100 palabras) - placeholder.' },
+  { slug: 'arco-3', title: 'Arco 3 - título en preparación', synopsis: 'Sinopsis breve (70–100 palabras) - placeholder.' },
 ] as const;
 
 const personajes = [
@@ -441,10 +441,10 @@ export default function Page() {
                 {/* Contenedor deslizable */}
                 <div id="carousel-mapa" className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
 {[
-  { id: 'slide-1', src: '/mundo-kiso/mapa/capa-1.jpg', alt: 'Capa 1 — Origen / Creación' },
-  { id: 'slide-2', src: '/mundo-kiso/mapa/capa-2.jpg', alt: 'Capa 2 — Fortaleza / Civilización' },
-  { id: 'slide-3', src: '/mundo-kiso/mapa/capa-3.jpg', alt: 'Capa 3 — Rutas y energía' },
-  { id: 'slide-4', src: '/mundo-kiso/mapa/capa-4.jpg', alt: 'Capa 4 — Trascendencia / Legado' },
+  { id: 'slide-1', src: '/mundo-kiso/mapa/capa-1.jpg', alt: 'Capa 1 - Origen / Creación' },
+  { id: 'slide-2', src: '/mundo-kiso/mapa/capa-2.jpg', alt: 'Capa 2 - Fortaleza / Civilización' },
+  { id: 'slide-3', src: '/mundo-kiso/mapa/capa-3.jpg', alt: 'Capa 3 - Rutas y energía' },
+  { id: 'slide-4', src: '/mundo-kiso/mapa/capa-4.jpg', alt: 'Capa 4 - Trascendencia / Legado' },
 ].map((s, idx, arr) => {
   const prev = idx === 0 ? arr[arr.length - 1] : arr[idx - 1];
   const next = idx === arr.length - 1 ? arr[0] : arr[idx + 1];
@@ -753,7 +753,7 @@ export default function Page() {
         <h3 className="text-[15px] font-semibold">Emblema</h3>
         <figure className="mt-3">
           <div className="relative w-full aspect-[4/3] rounded-xl ring-1 ring-[var(--border)] bg-[var(--surface-alt)] flex items-center justify-center">
-            <span className="text-xs text-foreground/60">Arte del emblema — placeholder</span>
+            <span className="text-xs text-foreground/60">Arte del emblema - placeholder</span>
           </div>
           <figcaption className="mt-2 text-xs text-foreground/65">Reemplazar por SVG oficial. No definir significados sin documento canónico.</figcaption>
           <ul className="mt-3 text-[12px] text-foreground/70 list-disc ps-5 space-y-1">
@@ -814,9 +814,9 @@ export default function Page() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
         <h3 className="text-[15px] font-semibold">Motivos</h3>
         <div className="mt-3 grid grid-cols-3 gap-2">
-          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[repeating-linear-gradient(45deg,rgba(255,255,255,.06)_0_8px,transparent_8px_16px)]" aria-label="Patrón diagonal — placeholder" />
-          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón radial — placeholder" />
-          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[linear-gradient(0deg,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón de franja — placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[repeating-linear-gradient(45deg,rgba(255,255,255,.06)_0_8px,transparent_8px_16px)]" aria-label="Patrón diagonal - placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón radial - placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[linear-gradient(0deg,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón de franja - placeholder" />
         </div>
         <p className="mt-2 text-[11px] text-foreground/60">*Reemplazar por SVG y texturas oficiales cuando estén aprobados.</p>
       </article>
@@ -882,8 +882,8 @@ export default function Page() {
                   <h3 className="text-[18px] md:text-[20px] font-semibold">La soule</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Juego medieval del norte de Francia (Normandía, Picardía). Se jugaba en prados, bosques o estanques, fuera de
-                    las cortes y con reglas variables. Dos bandos llevaban la pelota —de cuero o madera, sólida o hueca, rellena con
-                    heno, pelo o musgo— hasta un punto lejano, cruzando campos, ríos o pantanos. Sin prohibiciones estrictas, podía
+                    las cortes y con reglas variables. Dos bandos llevaban la pelota -de cuero o madera, sólida o hueca, rellena con
+                    heno, pelo o musgo- hasta un punto lejano, cruzando campos, ríos o pantanos. Sin prohibiciones estrictas, podía
                     durar días.
                   </p>
                 </article>
@@ -897,7 +897,7 @@ export default function Page() {
                     Juego ritual de Mesoamérica practicado por mayas y mexicas con pelota de hule maciza. El objetivo no era anotar puntos, sino
                     honrar a los dioses y ordenar el cosmos: la pelota simbolizaba el sol en su tránsito entre mundos. Se jugaba en patios en forma
                     de «I» con muros inclinados; a veces se usaban caderas y antebrazos para impulsar la bola. En ciertos periodos tuvo connotaciones
-                    sacrificiales y pactos políticos. Su legado técnico —el control de un balón elástico sin manos— dialoga con la idea del Orbe y
+                    sacrificiales y pactos políticos. Su legado técnico -el control de un balón elástico sin manos- dialoga con la idea del Orbe y
                     resuena en las culturas del juego hasta hoy.
                   </p>
                 </article>
@@ -909,7 +909,7 @@ export default function Page() {
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Harpastum</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Adaptación romana de juegos griegos de balón. Rápido y físico, enfrentaba equipos que buscaban mantener la posesión de una
-                    pelota pequeña —a menudo de cuero relleno— dentro de límites trazados en el suelo. Se permitían cargas, fintas y engaños; el
+                    pelota pequeña -a menudo de cuero relleno- dentro de límites trazados en el suelo. Se permitían cargas, fintas y engaños; el
                     cronista Galeno lo recomendaba para fortalecer cuerpo y mente. Su espíritu competitivo y el uso de manos lo emparentan con
                     tradiciones que más tarde derivarían en formas de fútbol y rugby, en contraste con el kemari o el ōllamaliztli.
                   </p>
@@ -936,7 +936,7 @@ export default function Page() {
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Disciplina acrobática que combina control de balón con saltos y voleas por encima de una red, usando pies, rodillas, hombros y
                     cabeza. Nacida de tradiciones malayas y siamesas, consolidó reglas modernas en el siglo XX con pelota de rattan (hoy también
-                    sintética). Su estética —elasticidad, precisión aérea, lectura del espacio— dialoga con el virtuosismo técnico del kemari y con
+                    sintética). Su estética -elasticidad, precisión aérea, lectura del espacio- dialoga con el virtuosismo técnico del kemari y con
                     el valor del entrenamiento como vía de superación en el universo Kiso.
                   </p>
                 </article>

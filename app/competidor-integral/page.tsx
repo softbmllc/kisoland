@@ -1,11 +1,11 @@
 // app/competidor-integral/page.tsx
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Competidor Integral — Ética y entrenamiento | KISOLAND",
+  title: "Competidor Integral - Ética y entrenamiento | KISOLAND",
   description:
     "Marco de formación que integra cuerpo, mente y conducta para la excelencia con valores.",
   openGraph: {
-    title: "Competidor Integral — Ética y entrenamiento | KISOLAND",
+    title: "Competidor Integral - Ética y entrenamiento | KISOLAND",
     description:
       "Marco de formación que integra cuerpo, mente y conducta para la excelencia con valores.",
     images: [
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
         url: "/og/competidor-integral.jpg",
         width: 1200,
         height: 630,
-        alt: "Competidor Integral — KISOLAND",
+        alt: "Competidor Integral - KISOLAND",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Competidor Integral — Ética y entrenamiento | KISOLAND",
+    title: "Competidor Integral - Ética y entrenamiento | KISOLAND",
     description:
       "Marco de formación que integra cuerpo, mente y conducta para la excelencia con valores.",
     images: ["/og/competidor-integral.jpg"],

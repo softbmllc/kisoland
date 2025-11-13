@@ -3,12 +3,12 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Galería — KISOLAND",
+  title: "Galería - KISOLAND",
   description: "Imágenes clave del universo Kiso.",
   openGraph: {
-    title: "Galería — KISOLAND",
+    title: "Galería - KISOLAND",
     description: "Imágenes clave del universo Kiso.",
-    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "KISOLAND — Universo Kiso" }],
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "KISOLAND - Universo Kiso" }],
   },
 };
 

@@ -2,12 +2,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Términos y Condiciones — KISOLAND",
+  title: "Términos y Condiciones - KISOLAND",
   description: "Condiciones de uso del sitio, propiedad intelectual y limitaciones de responsabilidad.",
   openGraph: {
-    title: "Términos y Condiciones — KISOLAND",
+    title: "Términos y Condiciones - KISOLAND",
     description: "Condiciones de uso del sitio, propiedad intelectual y limitaciones de responsabilidad.",
-    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "KISOLAND — Universo Kiso" }],
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "KISOLAND - Universo Kiso" }],
   },
 };
 

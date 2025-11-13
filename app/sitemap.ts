@@ -1,4 +1,4 @@
-// app/sitemap.ts — sitemap básico
+// app/sitemap.ts - sitemap básico
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {

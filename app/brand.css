@@ -107,7 +107,7 @@
 }
 
 /* ========= THEME HOOKS POR SECCIÓN (valores del cliente) ========= */
-/* Home — neutral (define surface/border for better separation in light & dark) */
+/* Home - neutral (define surface/border for better separation in light & dark) */
 .theme-home{
   /* In light: surface slightly darker than background for subtle card plane */
   --surface: color-mix(in oklab, var(--background) 90%, black);
@@ -116,7 +116,7 @@
   /* Lift border a bit for AA on light */
   --border: color-mix(in oklab, var(--foreground) 22%, transparent);
 
-  /* controls — light */
+  /* controls - light */
   --btn-bg:      color-mix(in oklab, var(--surface) 96%, white);
   --btn-fg:      var(--surface-foreground);
   --btn-border:  color-mix(in oklab, var(--foreground) 18%, transparent);
@@ -137,7 +137,7 @@
     --border:        rgba(255,255,255,0.16);
     --surface-foreground: var(--foreground);
 
-    /* controls — dark */
+    /* controls - dark */
     --btn-bg:      #ffffff;
     --btn-fg:      #111315;
     --btn-border:  rgba(255,255,255,0.20);
@@ -247,7 +247,7 @@
 .ty-lead{font-size:var(--lead-size);line-height:var(--lead-leading);opacity:.9;color:var(--ink);font-family:var(--font-body)}
 
 
-/* Focus Penalty — variantes explícitas por modo */
+/* Focus Penalty - variantes explícitas por modo */
 .theme-focus-penalty.light {
   --bg: #ffffff;
   --surface: #faf7f2;
@@ -322,7 +322,7 @@
 }
 
 /* =============================
-   Animations — append-only
+   Animations - append-only
    Ubicación: al final de app/brand.css
    Notas: no tocar tokens ni temas. Solo utilidades.
 ============================= */

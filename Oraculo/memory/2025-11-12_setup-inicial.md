@@ -1,4 +1,4 @@
-# 2025-11-08 — Setup inicial Oráculo KISO WEB
+# 2025-11-08 - Setup inicial Oráculo KISO WEB
 
 ## Resumen técnico
 KISO WEB consolidado en estructura y diseño modular.  
@@ -52,7 +52,7 @@ Sistema de theming confirmado (`brand.css`), SEO/OG correcto, estructura `/app` 
 
 ---
 
-## 2025-11-10 — Cierre Sprint v1.0.0 (Mundo Kiso + refinamiento UI)
+## 2025-11-10 - Cierre Sprint v1.0.0 (Mundo Kiso + refinamiento UI)
 
 ### Resumen técnico
 - **Mundo Kiso**: estructura y look & feel estabilizados (hero en terracota con `bg-[var(--surface)]` + `ring-1` + sombras consistentes). Jerarquías tipográficas alineadas al sistema (`ty-h1/ty-lead`, h3 internos, subtítulos en versales discretos). Coherencia AA en light/dark.

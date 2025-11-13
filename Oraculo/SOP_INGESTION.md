@@ -1,4 +1,4 @@
-# SOP Ingestión — Oráculo KISO WEB
+# SOP Ingestión - Oráculo KISO WEB
 
 ## Propósito
 Estandarizar cómo se actualizan los resúmenes y aprendizajes de cada hilo técnico para mantener la memoria viva del proyecto.

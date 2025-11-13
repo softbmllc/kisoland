@@ -26,7 +26,7 @@ const GROUPS: NavGroup[] = [
   {
     label: "Entrenamiento",
     items: [
-      { href: "/focos-penalty", label: "Focus Penalty" },
+      { href: "/focus-penalty", label: "Focus Penalty" },
       { href: "/competidor-integral", label: "Competidor Integral" },
     ],
   },

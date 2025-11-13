@@ -1,4 +1,4 @@
-// app/focos-penalty/page.tsx
+// app/focus-penalty/page.tsx
 import type { NextPage } from "next";
 import type { Metadata } from "next";
 import Card from "@/components/ui/Card";
@@ -6,29 +6,29 @@ import Chip from "@/components/ui/Chip";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Focus Penalty — Ciencia del penal | KISOLAND",
+  title: "Focus Penalty - Ciencia del penal | KISOLAND",
   description:
     "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
-  alternates: { canonical: "/focos-penalty" },
+  alternates: { canonical: "/focus-penalty" },
   openGraph: {
-    title: "Focus Penalty — Ciencia del penal | KISOLAND",
+    title: "Focus Penalty - Ciencia del penal | KISOLAND",
     description:
       "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
     images: [
       {
-        url: "/og/focos-penalty.jpg",
+        url: "/og/focus-penalty.jpg",
         width: 1200,
         height: 630,
-        alt: "Focus Penalty — Ciencia del penal",
+        alt: "Focus Penalty - Ciencia del penal",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Focus Penalty — Ciencia del penal | KISOLAND",
+    title: "Focus Penalty - Ciencia del penal | KISOLAND",
     description:
       "Preguntas que abren un diálogo global en torno al penalti. Herramienta de conexión y antesala del Mundial de Penaltis.",
-    images: ["/og/focos-penalty.jpg"],
+    images: ["/og/focus-penalty.jpg"],
   },
 };
 
@@ -47,7 +47,7 @@ const Page: NextPage = () => {
             {/* media hero */}
             <div className="relative mb-6 h-64 md:h-96 w-full">
               <Image
-                src="/focos-penalty/hero.jpg"
+                src="/focus-penalty/hero.jpg"
                 alt="Disparo a portería, enfoque en el balón"
                 fill
                 priority

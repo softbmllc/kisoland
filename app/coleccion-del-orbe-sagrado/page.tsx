@@ -2,11 +2,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Colección del Orbe Sagrado — KISOLAND",
+  title: "Colección del Orbe Sagrado - KISOLAND",
   description:
     "El Orbe Sagrado es la esencia de nuestra colección: más de 8.000 piezas que guardan la memoria del fútbol y su poder simbólico.",
   openGraph: {
-    title: "Colección del Orbe Sagrado — KISOLAND",
+    title: "Colección del Orbe Sagrado - KISOLAND",
     description:
       "El Orbe Sagrado es la esencia de nuestra colección: más de 8.000 piezas que guardan la memoria del fútbol y su poder simbólico.",
     images: [
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
         url: "/og/orbe-sagrado.jpg",
         width: 1200,
         height: 630,
-        alt: "Colección del Orbe Sagrado — KISOLAND",
+        alt: "Colección del Orbe Sagrado - KISOLAND",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Colección del Orbe Sagrado — KISOLAND",
+    title: "Colección del Orbe Sagrado - KISOLAND",
     description:
       "El Orbe Sagrado es la esencia de nuestra colección: más de 8.000 piezas que guardan la memoria del fútbol y su poder simbólico.",
     images: ["/og/orbe-sagrado.jpg"],

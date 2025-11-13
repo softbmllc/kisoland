@@ -1,4 +1,4 @@
-// postcss.config.mjs — Tailwind v3
+// postcss.config.mjs - Tailwind v3
 export default {
   plugins: {
     tailwindcss: {},

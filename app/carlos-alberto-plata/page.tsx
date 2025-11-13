@@ -4,11 +4,11 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Carlos Alberto Plata — KISOLAND",
+  title: "Carlos Alberto Plata - KISOLAND",
   description:
     "Biografía sintética del creador del universo Kiso y de la filosofía del Competidor Integral. Obra, enfoque y enlaces relacionados.",
   openGraph: {
-    title: "Carlos Alberto Plata — KISOLAND",
+    title: "Carlos Alberto Plata - KISOLAND",
     description:
       "Biografía sintética del creador del universo Kiso y de la filosofía del Competidor Integral. Obra, enfoque y enlaces relacionados.",
     images: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         url: "/og/carlos-alberto-plata.jpg",
         width: 1200,
         height: 630,
-        alt: "Carlos Alberto Plata — KISOLAND",
+        alt: "Carlos Alberto Plata - KISOLAND",
       },
     ],
   },
@@ -87,9 +87,9 @@ export default function Page() {
         </p>
 
         <ul className="mt-4 list-disc pl-5 space-y-1 opacity-90">
-          <li>Serie <em>Hitos de Kiso</em> — valores, hábitos y entrenamiento mental.</li>
-          <li>Cuadernos de práctica — dinámicas para clubes, colegios y familias.</li>
-          <li>Ensayos breves — ética de la competencia y liderazgo en equipo.</li>
+          <li>Serie <em>Hitos de Kiso</em> - valores, hábitos y entrenamiento mental.</li>
+          <li>Cuadernos de práctica - dinámicas para clubes, colegios y familias.</li>
+          <li>Ensayos breves - ética de la competencia y liderazgo en equipo.</li>
         </ul>
 
         <h2 className="mt-8 text-xl font-semibold">Enlaces y referencias</h2>

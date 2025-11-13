@@ -49,7 +49,7 @@ components/
   │    ├─ HomeChapters.tsx
   │    ├─ HomeEditorial.tsx
   │    ├─ HomeCTA.tsx
-  │    └─ (HomeHighlights opcional — oculto por defecto)
+  │    └─ (HomeHighlights opcional - oculto por defecto)
 public/
   ├─ brand/mark-dark.svg | mark-light.svg
   ├─ mundo-kiso/mapa-ilustrado.jpg     # placeholder (lightbox)
@@ -131,11 +131,11 @@ public/
 - Mensajes breves, una tarea por vez.
 
 ---
-Autor: Equipo KISOLAND — 2025
+Autor: Equipo KISOLAND - 2025
 
 ---
 
-## 📦 Release v0.9.0 — Refinamiento Focus Penalty + Coherencia global + A11y
+## 📦 Release v0.9.0 - Refinamiento Focus Penalty + Coherencia global + A11y
 
 ### Cambios principales
 - Unificación total de tokens y temas (dark/light).
@@ -156,7 +156,7 @@ Autor: Equipo KISOLAND — 2025
 
 ---
 
-## 📦 Release v1.0.0 — Mundo Kiso + Refinamiento global
+## 📦 Release v1.0.0 - Mundo Kiso + Refinamiento global
 
 ### Cambios principales (2025‑11‑10)
 - **Mundo Kiso**: estructura y look & feel estabilizados (hero, relato, cronología, arcos, galería, juegos). Coherencia visual AA en light/dark.

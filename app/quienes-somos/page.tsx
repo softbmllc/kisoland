@@ -3,21 +3,21 @@ import type { Metadata } from "next";
 import Timeline from "@/components/Timeline";
 import { QUIENES_SOMOS_TIMELINE } from "./timeline.data";
 export const metadata: Metadata = {
-  title: "Quiénes somos — KISOLAND",
+  title: "Quiénes somos - KISOLAND",
   description:
     "Visión, valores y equipo detrás del universo Kiso. Arte, entrenamiento y producto con intención.",
   alternates: { canonical: "/quienes-somos" },
   openGraph: {
-    title: "Quiénes somos — KISOLAND",
+    title: "Quiénes somos - KISOLAND",
     description:
       "Visión, valores y equipo detrás del universo Kiso. Arte, entrenamiento y producto con intención.",
     images: [
-      { url: "/og/quienes-somos.jpg", width: 1200, height: 630, alt: "Quiénes somos — KISOLAND" },
+      { url: "/og/quienes-somos.jpg", width: 1200, height: 630, alt: "Quiénes somos - KISOLAND" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Quiénes somos — KISOLAND",
+    title: "Quiénes somos - KISOLAND",
     description:
       "Visión, valores y equipo detrás del universo Kiso. Arte, entrenamiento y producto con intención.",
     images: ["/og/quienes-somos.jpg"],
@@ -67,9 +67,9 @@ export default function Page() {
             <h2 className="text-xl font-bold">Equipo central</h2>
             <ul className="list-disc pl-5 text-sm opacity-80 space-y-1.5">
               <li>
-                <a href="/carlos-alberto-plata" className="underline underline-offset-4">Carlos Alberto Plata</a> — Creador del universo Kiso
+                <a href="/carlos-alberto-plata" className="underline underline-offset-4">Carlos Alberto Plata</a> - Creador del universo Kiso
               </li>
-              <li>Colaboradores — a confirmar</li>
+              <li>Colaboradores - a confirmar</li>
             </ul>
           </div>
           <div className="space-y-4">

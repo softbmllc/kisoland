@@ -1,4 +1,4 @@
-// components/Gallery.tsx — limpio y tipado
+// components/Gallery.tsx - limpio y tipado
 // Uso: <Gallery items={[{src:"/img.jpg", alt:"..."}, ...]} />
 
 type Item = {

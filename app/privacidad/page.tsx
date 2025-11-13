@@ -2,12 +2,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Política de Privacidad — KISOLAND",
+  title: "Política de Privacidad - KISOLAND",
   description: "Cómo tratamos datos personales, cookies y formularios de contacto.",
   openGraph: {
-    title: "Política de Privacidad — KISOLAND",
+    title: "Política de Privacidad - KISOLAND",
     description: "Cómo tratamos datos personales, cookies y formularios de contacto.",
-    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "KISOLAND — Universo Kiso" }],
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "KISOLAND - Universo Kiso" }],
   },
 };
 

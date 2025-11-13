@@ -18,7 +18,7 @@ export type TimelineItem = {
       .replace(/\s+/g, ' ')
       .replace(/ac\.?|a\s*\.?c\.?/i, 'a.C.')
       .replace(/bc/i, 'a.C.')
-      .replace(/[—–]/g, '–'); // normalizar dash
+      .replace(/[-–]/g, '–'); // normalizar dash
     // Si viene "-1770" → "1770 a.C."
     if (/^-\d{1,4}$/.test(y)) return `${Math.abs(Number(y))} a.C.`;
     // Si ya trae "a.C." lo dejamos
@@ -31,7 +31,7 @@ export type TimelineItem = {
     const raw = year.toLowerCase().trim();
     const isBC = /a\.?c\.?|bc/.test(raw) || /^-\d/.test(raw);
     // tomar primer número del string
-    const m = raw.replace(/[—–]/g, '-').match(/(\d{1,4})/);
+    const m = raw.replace(/[-–]/g, '-').match(/(\d{1,4})/);
     if (!m) return '0001';
     const n = parseInt(m[1], 10);
     return isBC ? String(-n) : String(n).padStart(4, '0');
@@ -50,9 +50,9 @@ export type TimelineItem = {
       const yearOk =
         typeof y === 'number' ||
         // "1128", "1128–1155"
-        (typeof y === 'string' && /^(\d{1,4})([—–-](\d{1,4}))?$/.test(y.trim())) ||
+        (typeof y === 'string' && /^(\d{1,4})([-–-](\d{1,4}))?$/.test(y.trim())) ||
         // "1770 a.C.", "1770–1720 a.C.", "BC"
-        (typeof y === 'string' && /^(\d{1,4})(\s*[—–-]\s*\d{1,4})?\s*(a\.?c\.?|bc)$/i.test(y.trim())) ||
+        (typeof y === 'string' && /^(\d{1,4})(\s*[-–-]\s*\d{1,4})?\s*(a\.?c\.?|bc)$/i.test(y.trim())) ||
         // "-1770"
         (typeof y === 'string' && /^-\d{1,4}$/.test(y.trim()));
       if (!yearOk) errors.push(`#${idx}: year inválido: ${String(y)}`);

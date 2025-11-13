@@ -1,7 +1,7 @@
-# TEMPLATE Prompt Inicial — KISO WEB
+# TEMPLATE Prompt Inicial - KISO WEB
 
 ## Contexto base
-Proyecto KISO WEB — ecosistema digital del universo KISOLAND.
+Proyecto KISO WEB - ecosistema digital del universo KISOLAND.
 Stack: Next.js 15 + TS + Tailwind v3.
 Theming modular: `app/brand.css` (tokens `--lam1-*` / `.theme-*`).
 Estructura: `/app/`, `/components/ui/`, `/public/`.

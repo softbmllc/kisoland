@@ -38,7 +38,7 @@ const CHAPTERS: Chapter[] = [
     alt: "Orbe sagrado en primer plano",
   },
   {
-    href: "/focos-penalty",
+    href: "/focus-penalty",
     chip: "Experiencia",
     title: "Focus Penalty",
     desc: "Ciencia del penal.",

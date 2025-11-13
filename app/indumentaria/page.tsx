@@ -2,21 +2,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Indumentaria — KISOLAND",
+  title: "Indumentaria - KISOLAND",
   description:
     "Colección de indumentaria y accesorios oficiales del universo Kiso.",
   alternates: { canonical: "/indumentaria" },
   openGraph: {
-    title: "Indumentaria — KISOLAND",
+    title: "Indumentaria - KISOLAND",
     description:
       "Colección de indumentaria y accesorios oficiales del universo Kiso.",
     images: [
-      { url: "/og/indumentaria.jpg", width: 1200, height: 630, alt: "Indumentaria — KISOLAND" },
+      { url: "/og/indumentaria.jpg", width: 1200, height: 630, alt: "Indumentaria - KISOLAND" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Indumentaria — KISOLAND",
+    title: "Indumentaria - KISOLAND",
     description:
       "Colección de indumentaria y accesorios oficiales del universo Kiso.",
     images: ["/og/indumentaria.jpg"],
@@ -46,7 +46,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Cards placeholder — luego se reemplaza por catálogo del admin */}
+      {/* Cards placeholder - luego se reemplaza por catálogo del admin */}
       <section id="catalogo" className="grid gap-6 md:grid-cols-3">
         {[
           ["Remera Kiso Logo", "Unisex, algodón. Talles S–XL."],

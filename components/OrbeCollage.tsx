@@ -1,4 +1,4 @@
-// components/OrbeCollage.tsx — collage hero para Orbe Sagrado
+// components/OrbeCollage.tsx - collage hero para Orbe Sagrado
 import Image from "next/image";
 
 // PNGs en /public/orbe-sagrado/hero/

@@ -3,21 +3,21 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kisolab — Investigación y prototipos | KISOLAND",
+  title: "Kisolab - Investigación y prototipos | KISOLAND",
   description:
     "Laboratorio creativo que transforma patrimonio futbolero en exposiciones, museos y proyectos itinerantes. 8.000+ piezas. Fútbol, diseño y memoria.",
   alternates: { canonical: "/kisolab" },
   openGraph: {
-    title: "Kisolab — Investigación y prototipos | KISOLAND",
+    title: "Kisolab - Investigación y prototipos | KISOLAND",
     description:
       "Laboratorio creativo que transforma patrimonio futbolero en exposiciones, museos y proyectos itinerantes. 8.000+ piezas. Fútbol, diseño y memoria.",
     images: [
-      { url: "/og/kisolab.jpg", width: 1200, height: 630, alt: "Kisolab — Investigación y prototipos" },
+      { url: "/og/kisolab.jpg", width: 1200, height: 630, alt: "Kisolab - Investigación y prototipos" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kisolab — Investigación y prototipos | KISOLAND",
+    title: "Kisolab - Investigación y prototipos | KISOLAND",
     description:
       "Laboratorio creativo que transforma patrimonio futbolero en exposiciones, museos y proyectos itinerantes. 8.000+ piezas. Fútbol, diseño y memoria.",
     images: ["/og/kisolab.jpg"],
@@ -86,7 +86,7 @@ export default function Page() {
               >
                 <a
                   href="#investigacion"
-                  aria-label="Investigación visual — ver más"
+                  aria-label="Investigación visual - ver más"
                   className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                 />
                 <h3 className="font-semibold tracking-tight text-[var(--foreground)]">Investigación visual</h3>
@@ -103,7 +103,7 @@ export default function Page() {
               >
                 <a
                   href="#narrativa"
-                  aria-label="Narrativa — ver más"
+                  aria-label="Narrativa - ver más"
                   className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                 />
                 <h3 className="font-semibold tracking-tight text-[var(--foreground)]">Narrativa</h3>
@@ -120,7 +120,7 @@ export default function Page() {
               >
                 <a
                   href="#producto"
-                  aria-label="Producto — ver más"
+                  aria-label="Producto - ver más"
                   className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                 />
                 <h3 className="font-semibold tracking-tight text-[var(--foreground)]">Producto</h3>
@@ -139,13 +139,13 @@ export default function Page() {
                 <h2 className="ty-h2 text-[var(--foreground)]">Proyectos en curso</h2>
                 <ul className="list-disc pl-5 space-y-1.5 text-[var(--foreground)]/90">
                   <li>
-                    <Link prefetch href="/focos-penalty" className="underline underline-offset-4">Focus Penalty</Link> — línea de entrenamiento y foco
+                    <Link prefetch href="/focus-penalty" className="underline underline-offset-4">Focus Penalty</Link> - línea de entrenamiento y foco
                   </li>
                   <li>
-                    <Link prefetch href="/coleccion-del-orbe-sagrado" className="underline underline-offset-4">Colección del Orbe Sagrado</Link> — piezas y relatos
+                    <Link prefetch href="/coleccion-del-orbe-sagrado" className="underline underline-offset-4">Colección del Orbe Sagrado</Link> - piezas y relatos
                   </li>
                   <li>
-                    <Link prefetch href="/indumentaria" className="underline underline-offset-4">Indumentaria Kiso</Link> — drops y edición limitada
+                    <Link prefetch href="/indumentaria" className="underline underline-offset-4">Indumentaria Kiso</Link> - drops y edición limitada
                   </li>
                 </ul>
               </div>

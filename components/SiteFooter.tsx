@@ -1,10 +1,10 @@
-// components/SiteFooter.tsx — limpio y coherente con el header
+// components/SiteFooter.tsx - limpio y coherente con el header
 import Link from "next/link";
 import Image from "next/image";
 
 const links = [
   { href: "/kisolab", label: "Kisolab" },
-  { href: "/focos-penalty", label: "Focus Penalty" },
+  { href: "/focus-penalty", label: "Focus Penalty" },
   { href: "/indumentaria", label: "Indumentaria" },
   { href: "/mundo-kiso", label: "Mundo Kiso" },
   { href: "/coleccion-del-orbe-sagrado", label: "Orbe Sagrado" },
