@@ -97,7 +97,7 @@ public/
 
 ## Contenido cargado
 - **Personajes** (principales, inmortales y deidades) con **roles + bios** desde el doc del cliente.
-- **Textos verificados** para *Kisolab*, *Orbe Sagrado* y *Focus Penalty*.
+- **Textos verificados** para *Orbe Sagrado* y *Focus Penalty*. *Kisolab*: hero + capacidades con copy en modo borrador, pendiente de validación del cliente.
 - Miniaturas 4:3 para Home en /public/cards/*.jpg (1200×900, sRGB).
 
 ## Pendientes (cliente)
