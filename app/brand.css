@@ -323,9 +323,9 @@
 
 @media (prefers-color-scheme: dark) {
   .theme-kisolab:not(.light):not(.dark) {
-    --background: color-mix(in oklab, var(--lam1-bg) 25%, black);
-    --surface: color-mix(in oklab, var(--lam1-fg) 18%, var(--background));
-    --surface-alt: color-mix(in oklab, var(--surface) 90%, white);
+    --background: color-mix(in oklab, var(--lam1-bg) 30%, black);
+    --surface: color-mix(in oklab, var(--lam1-fg) 45%, var(--background));
+    --surface-alt: color-mix(in oklab, var(--surface) 85%, black);
     --foreground: color-mix(in oklab, var(--lam1-fg) 90%, white);
     --surface-foreground: var(--foreground);
     --ink: var(--foreground);
@@ -351,9 +351,9 @@
 }
 
 .dark .theme-kisolab{
-  --background: color-mix(in oklab, var(--lam1-bg) 25%, black);
-  --surface: color-mix(in oklab, var(--lam1-fg) 18%, var(--background));
-  --surface-alt: color-mix(in oklab, var(--surface) 90%, white);
+  --background: color-mix(in oklab, var(--lam1-bg) 30%, black);
+  --surface: color-mix(in oklab, var(--lam1-fg) 45%, var(--background));
+  --surface-alt: color-mix(in oklab, var(--surface) 85%, black);
   --foreground: color-mix(in oklab, var(--lam1-fg) 90%, white);
   --surface-foreground: var(--foreground);
   --ink: var(--foreground);
