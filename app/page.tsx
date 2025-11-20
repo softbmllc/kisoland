@@ -1,5 +1,9 @@
 // app/page.tsx - Home (usa componentes externos)
 import type { Metadata } from "next";
+import HomeHero from "@/components/HomeHero";
+import HomeChapters from "@/components/Home/HomeChapters";
+import HomeEditorial from "@/components/Home/HomeEditorial";
+import HomeCTA from "@/components/Home/HomeCTA";
 
 export const metadata: Metadata = {
   title: "Kisoland - Universo Kiso",
@@ -22,12 +26,6 @@ export const metadata: Metadata = {
     images: ["/og/home.jpg"],
   },
 };
-
-import HomeHero from "@/components/HomeHero";
-import HomeChapters from "@/components/Home/HomeChapters";
-import HomeEditorial from "@/components/Home/HomeEditorial";
-import HomeCTA from "@/components/Home/HomeCTA";
-
 export default function Home() {
   return (
     <main className="theme theme-home bg-[var(--background)] text-[var(--foreground)]">

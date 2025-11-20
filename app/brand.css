@@ -159,9 +159,20 @@
   --primary: var(--lam1-primary);
   --accent: var(--lam1-accent);
   --background: var(--lam1-bg);
-  --foreground: var(--lam1-fg);
+  --foreground: color-mix(in oklab, var(--lam1-fg) 70%, #5b2c1e);
+  --kisolab-hero-body: color-mix(in oklab, var(--ink) 55%, white 45%);
   --muted: var(--lam1-muted);
   --muted-foreground: var(--lam1-muted-fg);
+
+  /* superficies y hero específicos de Kisolab (más laboratorio, más dorado) */
+  --surface: color-mix(in oklab, var(--lam1-fg) 88%, white);
+  --surface-alt: color-mix(in oklab, var(--surface) 90%, black);
+  --surface-foreground: color-mix(in oklab, var(--ink) 92%, black);
+  --border: color-mix(in oklab, var(--ink) 20%, transparent);
+
+  --hero-primary: color-mix(in oklab, var(--background) 92%, black);
+  --hero-accent: color-mix(in oklab, var(--foreground) 60%, var(--background) 40%);
+
   /* fuentes por tema */
   --font-heading: var(--font-libre), "Libre Baskerville","Baskerville","Big Caslon","Palatino Linotype","Palatino","Times New Roman",serif;
   --font-body: var(--font-sans);
@@ -245,6 +256,10 @@
 .ty-h1{font-size:var(--h1-size);line-height:var(--h1-leading);letter-spacing:var(--h1-track);font-weight:800;color:var(--ink);font-family:var(--font-heading)}
 .ty-h2{font-size:var(--h2-size);line-height:var(--h2-leading);letter-spacing:var(--h2-track);font-weight:700;color:var(--ink);font-family:var(--font-heading)}
 .ty-lead{font-size:var(--lead-size);line-height:var(--lead-leading);opacity:.9;color:var(--ink);font-family:var(--font-body)}
+.ty-card-title{font-size:1.25rem;line-height:1.3;letter-spacing:-0.01em;font-weight:700;color:var(--ink);font-family:var(--font-heading)}
+@media (min-width:768px){
+  .ty-card-title{font-size:1.375rem;}
+}
 
 
 /* Focus Penalty - variantes explícitas por modo */
@@ -306,6 +321,20 @@
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .theme-kisolab:not(.light):not(.dark) {
+    --background: color-mix(in oklab, var(--lam1-bg) 30%, black);
+    --surface: color-mix(in oklab, var(--lam1-fg) 45%, var(--background));
+    --surface-alt: color-mix(in oklab, var(--surface) 85%, black);
+    --foreground: color-mix(in oklab, var(--lam1-fg) 90%, white);
+    --surface-foreground: var(--foreground);
+    --ink: var(--foreground);
+    --border: rgba(255,255,255,0.20);
+    --hero-primary: color-mix(in oklab, var(--background) 80%, black);
+    --hero-accent: color-mix(in oklab, var(--lam1-fg) 80%, white);
+  }
+}
+
 /* === Dark mode overrides for manual toggle (html.dark) === */
 :root.dark{
   --background: #0b0c0f;
@@ -319,6 +348,16 @@
   --foreground: #e8e8ea;
   --surface-foreground: #e8e8ea;
   --ink: #e8e8ea;
+}
+
+.dark .theme-kisolab{
+  --background: color-mix(in oklab, var(--lam1-bg) 30%, black);
+  --surface: color-mix(in oklab, var(--lam1-fg) 45%, var(--background));
+  --surface-alt: color-mix(in oklab, var(--surface) 85%, black);
+  --foreground: color-mix(in oklab, var(--lam1-fg) 90%, white);
+  --surface-foreground: var(--foreground);
+  --ink: var(--foreground);
+  --border: rgba(255,255,255,0.20);
 }
 
 /* =============================

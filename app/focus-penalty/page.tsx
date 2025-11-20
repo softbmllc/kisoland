@@ -38,7 +38,7 @@ const Page: NextPage = () => {
       <div className="mx-auto max-w-6xl px-4 py-16">
         <header className="mb-8 md:mb-10">
           <div
-            className="relative isolate overflow-hidden rounded-3xl p-8 md:p-12 ring-1 ring-[var(--border)]"
+            className="relative isolate overflow-hidden rounded-3xl p-8 md:p-12 ring-1 ring-[color:var(--border)]"
             style={{
               background:
                 "radial-gradient(120% 120% at 10% 0%, var(--accent) 0%, transparent 60%), radial-gradient(140% 140% at 90% 100%, var(--primary) 0%, transparent 60%)",
@@ -192,8 +192,8 @@ const Page: NextPage = () => {
         <div className="mt-20 border-t border-[color:var(--border)]/60" />
 
         {/* CTA final */}
-        <section className="mt-0 pt-12">
-          <Card title="¿Listos para practicar?" accent={false} className="rounded-lg ring-[var(--border)]/18 shadow-[0_6px_16px_rgba(0,0,0,0.06),0_-1px_0_rgba(255,255,255,0.05),0_-24px_32px_rgba(0,0,0,0.4)]">
+        <section className="pt-12">
+          <Card title="¿Listos para practicar?" accent={false} className="rounded-lg ring-[color:var(--border)]/18 shadow-[0_6px_16px_rgba(0,0,0,0.06),0_-1px_0_rgba(255,255,255,0.05),0_-24px_32px_rgba(0,0,0,0.4)]">
             <p className="max-w-[56ch] leading-[1.55]">
               Podemos compartirte la guía completa en PDF o coordinar una demo.
             </p>
