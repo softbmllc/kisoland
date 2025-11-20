@@ -334,8 +334,8 @@ export default function Page() {
       <div className="mx-auto max-w-6xl px-4 py-16">
         {/* Hero / Intro */}
         <section className="rounded-[24px]">
-        {/* Hero / Intro nuevo bloque (ajustado) */}
-        <div className="mb-12 relative overflow-hidden rounded-[22px] pt-20 pb-14 px-10 md:pt-24 md:pb-16 md:px-16 anim-fade-in">
+          {/* Hero / Intro nuevo bloque (ajustado) */}
+          <div className="mb-12 relative overflow-hidden rounded-[22px] pt-20 pb-14 px-10 md:pt-24 md:pb-16 md:px-16 anim-fade-in">
           <div
             className="absolute inset-0"
             style={{
@@ -345,23 +345,23 @@ export default function Page() {
             aria-hidden
           />
           {/* Scrim inferior más leve */}
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.04)_40%,rgba(0,0,0,0.08)_100%)]" aria-hidden />
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-[linear-gradient(180deg,rgba(0, 0, 0, 0)_0%,rgba(0, 0, 0, 0.04)_40%,rgba(0, 0, 0, 0.08)_100%)]" aria-hidden />
 
           {/* Luz suave detrás del título */}
           <div className="absolute top-16 left-1/3 w-[60%] h-[40%] rounded-full bg-white/5 blur-[80px]" aria-hidden />
 
-          <div className="relative z-10 max-w-4xl">
-            <p className="text-[11px] font-semibold tracking-[0.18em] text-white/85">MUNDO KISO</p>
-            <h1 className="mt-6 ty-h1 text-white">El mundo de Kiso</h1>
-            <p className="mt-5 max-w-[72ch] ty-lead text-white/90">
-              El mundo de Kiso organiza la geografía, cronología y símbolos del universo. Aquí viven los personajes principales, sus hitos y las piezas que los conectan con la historia del fútbol. Esta sección funciona como mapa vivo: capítulos, lugares y tiempos que se expanden con cada proyecto. El objetivo es dar contexto a la obra, facilitar la lectura y ofrecer un punto de entrada claro tanto para nuevos lectores como para quienes siguen el desarrollo.
-            </p>
+            <div className="relative z-10 max-w-4xl">
+              <p className="text-[11px] font-semibold tracking-[0.18em] text-white/85">MUNDO KISO</p>
+              <h1 className="mt-6 ty-h1 text-white">El mundo de Kiso</h1>
+              <p className="mt-5 max-w-[72ch] ty-lead text-white/90">
+                El mundo de Kiso organiza la geografía, cronología y símbolos del universo. Aquí viven los personajes principales, sus hitos y las piezas que los conectan con la historia del fútbol. Esta sección funciona como mapa vivo: capítulos, lugares y tiempos que se expanden con cada proyecto. El objetivo es dar contexto a la obra, facilitar la lectura y ofrecer un punto de entrada claro tanto para nuevos lectores como para quienes siguen el desarrollo.
+              </p>
+            </div>
           </div>
-        </div>
 
-        {/* Subnavegación */}
-        {/* Mobile: barra horizontal optimizada */}
-        <div className="mt-6 md:hidden relative">
+          {/* Subnavegación */}
+          {/* Mobile: barra horizontal optimizada */}
+          <div className="mt-6 md:hidden relative">
           {/* Fades laterales */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-[var(--background)] to-transparent" aria-hidden />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-[var(--background)] to-transparent" aria-hidden />
@@ -384,7 +384,7 @@ export default function Page() {
                 <li key={href as string} className="snap-start flex-shrink-0">
                   <a
                     href={href as string}
-                    className="inline-flex items-center justify-center h-10 min-w-[44px] rounded-full px-4 text-[14px] font-medium bg-background/40 text-foreground/90 hover:bg-background/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
+                    className="inline-flex items-center justify-center h-10 min-w-[44px] rounded-full px-4 text-[14px] font-medium bg-[var(--background)]/40 text-[var(--foreground)]/90 hover:bg-[var(--background)]/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
                     aria-label={`Ir a ${label as string}`}
                   >
                     {label}
@@ -393,14 +393,14 @@ export default function Page() {
               ))}
             </ul>
           </nav>
-        </div>
+          </div>
 
-        {/* Desktop: dock centrado sticky */}
-        <div className="hidden md:flex md:sticky top-4 z-30 mt-6 justify-center">
+          {/* Desktop: dock centrado sticky */}
+          <div className="hidden md:flex md:sticky top-4 z-30 mt-6 justify-center">
           <nav aria-label="Secciones de Mundo Kiso">
             <ul className="mx-0 px-2 whitespace-nowrap pb-2 md:px-0 md:pb-0 flex justify-center gap-0 max-w-full">
               <li className="inline-flex">
-                <div className="mx-auto w-max flex gap-2 rounded-full border border-[hsl(var(--border)/.14)] bg-background/25 backdrop-blur-[2px] px-3 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.03),0_3px_10px_rgba(0,0,0,0.06)]">
+                <div className="mx-auto w-max flex gap-2 rounded-full border border-[hsl(var(--border)/.14)] bg-[var(--background)]/25 backdrop-blur-[2px] px-3 py-1 shadow-[inset_0_1px_0_rgba(255, 255, 255, 0.03),0_3px_10px_rgba(0, 0, 0, 0.06)]">
                   {[
                     ["Origen", "#origen"],
                     ["Mapa", "#mapa"],
@@ -414,7 +414,7 @@ export default function Page() {
                     <a
                       key={href as string}
                       href={href as string}
-                      className="text-[13px] md:text-[14px] font-medium tracking-[0.01em] rounded-full px-4 py-2 text-foreground/90 hover:text-foreground bg-transparent hover:bg-[hsl(var(--border)/.18)]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
+                      className="text-[13px] md:text-[14px] font-medium tracking-[0.01em] rounded-full px-4 py-2 text-[var(--foreground)]/90 hover:text-[var(--foreground)] bg-transparent hover:bg-[hsl(var(--border)/.18)]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/40 transition-colors"
                       aria-label={`Ir a ${label as string}`}
                     >
                       {label}
@@ -427,7 +427,7 @@ export default function Page() {
         </div>
 
           {/* Body */}
-          <div className="bg-background/80 p-6 md:p-8 rounded-b-3xl">
+          <div className="bg-[var(--background)]/80 p-6 md:p-8 rounded-b-3xl">
             {/* Mapa ilustrado */}
             <section id="mapa">
               <h2 className="ty-h2">Mapa ilustrado</h2>
@@ -454,7 +454,7 @@ export default function Page() {
       <a
         href={`#${prev.id}`}
         aria-label="Anterior"
-        className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-background/60 ring-1 ring-[var(--border)] text-foreground/90 hover:bg-background/80 transition"
+        className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-[var(--background)]/60 ring-1 ring-[var(--border)] text-[var(--foreground)]/90 hover:bg-[var(--background)]/80 transition"
       >
         ‹
       </a>
@@ -462,7 +462,7 @@ export default function Page() {
       <a
         href={`#${next.id}`}
         aria-label="Siguiente"
-        className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-background/60 ring-1 ring-[var(--border)] text-foreground/90 hover:bg-background/80 transition"
+        className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-10 h-10 w-10 items-center justify-center rounded-full bg-[var(--background)]/60 ring-1 ring-[var(--border)] text-[var(--foreground)]/90 hover:bg-[var(--background)]/80 transition"
       >
         ›
       </a>
@@ -496,12 +496,12 @@ export default function Page() {
                         {...(i === 0 ? { 'data-default': 'true' } : {})}
                         className={
                           i === 0
-                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-1:target_~_&]:bg-white/90 data-[default=true]:bg-white/90"
+                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-[var(--foreground)]/20 hover:bg-[var(--foreground)]/40 [#slide-1:target_~_&]:bg-white/90 data-[default=true]:bg-white/90"
                             : i === 1
-                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-2:target_~_&]:bg-white/90"
+                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-[var(--foreground)]/20 hover:bg-[var(--foreground)]/40 [#slide-2:target_~_&]:bg-white/90"
                             : i === 2
-                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-3:target_~_&]:bg-white/90"
-                            : "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-foreground/20 hover:bg-foreground/40 [#slide-4:target_~_&]:bg-white/90"
+                            ? "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-[var(--foreground)]/20 hover:bg-[var(--foreground)]/40 [#slide-3:target_~_&]:bg-white/90"
+                            : "inline-flex h-2.5 w-2.5 items-center justify-center rounded-full ring-1 ring-[var(--border)] bg-[var(--foreground)]/20 hover:bg-[var(--foreground)]/40 [#slide-4:target_~_&]:bg-white/90"
                         }
                         data-bullet={key}
                       >
@@ -517,22 +517,21 @@ export default function Page() {
               </div>
             </section>
 
-
             {/* Relato de origen */}
             <section id="origen" className="mt-12">
               <h2 className="ty-h2">Relato de origen</h2>
-              <Card className="relative mt-6 w-full rounded-[18px] border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] p-8 md:p-10 overflow-hidden shadow-[0_10px_28px_rgba(0,0,0,0.10)] ring-1 ring-white/8">
+              <Card className="relative mt-6 w-full rounded-[18px] border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] p-8 md:p-10 overflow-hidden shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)] ring-1 ring-white/8">
                 {/* Luz y viñeta */}
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.16)_0%,transparent_58%)]" aria-hidden />
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_80%_120%,rgba(0,0,0,.08)_0%,transparent_60%)]" aria-hidden />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .16)_0%,transparent_58%)]" aria-hidden />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_80%_120%,rgba(0, 0, 0, .08)_0%,transparent_60%)]" aria-hidden />
                 <div className="pointer-events-none absolute top-4 right-6 opacity-[.04] w-24 h-24" style={{mask: 'url(/symbols/emblema.svg) no-repeat center / contain', WebkitMask: 'url(/symbols/emblema.svg) no-repeat center / contain', background: 'currentColor'}} aria-hidden />
 
                 <div className="relative max-w-[60ch] md:ms-1">
-                  <Chip className="text-[11px] bg-[hsl(var(--border)/.32)] text-foreground/75">Relato canónico</Chip>
+                  <Chip className="text-[11px] bg-[hsl(var(--border)/.32)] text-[var(--foreground)]/75">Relato canónico</Chip>
 
                   <h3 className="mt-5 text-[26px] md:text-[30px] font-semibold tracking-tight">El origen</h3>
 
-                  <p className="mt-1 text-[12px] uppercase tracking-[0.18em] text-foreground/60">Japón · Era Genpei</p>
+                  <p className="mt-1 text-[12px] uppercase tracking-[0.18em] text-[var(--foreground)]/60">Japón · Era Genpei</p>
 
                   <hr className="mt-3 h-px w-9 border-0 bg-[hsl(var(--border)/.25)]" />
 
@@ -558,13 +557,13 @@ export default function Page() {
                         key={a.slug}
                         className={
                           "relative rounded-2xl p-6 md:p-7 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)]" +
-                          " ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)] overflow-hidden h-full"
+                          " ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)] overflow-hidden h-full"
                         }
                       >
-                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
                         <div className="flex items-start justify-between gap-3">
                           <div>
-                            <Chip className="text-[11px] bg-[hsl(var(--border)/.32)] text-foreground/75">En preparación</Chip>
+                            <Chip className="text-[11px] bg-[hsl(var(--border)/.32)] text-[var(--foreground)]/75">En preparación</Chip>
                           </div>
                           {/* Espacio para acciones futuras o iconos */}
                         </div>
@@ -587,13 +586,13 @@ export default function Page() {
                         key={a.slug}
                         className={
                           "relative rounded-2xl p-5 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)]" +
-                          " ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)] overflow-hidden h-full"
+                          " ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)] overflow-hidden h-full"
                         }
                       >
-                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
                         <div className="flex items-start justify-between gap-3">
                           <div>
-                            <Chip className="text-[11px] bg-[hsl(var(--border)/.32)] text-foreground/75">En preparación</Chip>
+                            <Chip className="text-[11px] bg-[hsl(var(--border)/.32)] text-[var(--foreground)]/75">En preparación</Chip>
                           </div>
                           {/* Espacio para acciones futuras o iconos */}
                         </div>
@@ -632,10 +631,10 @@ export default function Page() {
                       {/* card */}
                       <label
                         htmlFor={`ch-${p.slug}`}
-                        className="relative block cursor-pointer rounded-2xl border border-[hsl(var(--border)/.14)] p-4 bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)] md:h-[20rem] flex flex-col justify-between transition hover:-translate-y-0.5 hover:ring-[hsl(var(--accent)/.25)]"
+                        className="relative block cursor-pointer rounded-2xl border border-[hsl(var(--border)/.14)] p-4 bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)] md:h-[20rem] flex flex-col justify-between transition hover:-translate-y-0.5 hover:ring-[hsl(var(--accent)/.25)]"
                         aria-label={`Abrir ficha de ${p.name}`}
                       >
-                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+                        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
                         <div className="relative w-full aspect-[3/4] rounded-xl bg-[var(--surface-alt)] overflow-hidden px-3 md:px-4 py-2 ring-1 ring-[var(--border)] after:content-[''] after:absolute after:inset-x-6 after:bottom-2 after:h-2 after:rounded-full after:bg-black/20 after:blur-[6px] after:z-0">
                           <Image src={p.src} alt={p.alt} fill className="object-contain z-10" loading="lazy" />
                         </div>
@@ -662,14 +661,14 @@ export default function Page() {
                           {/* Nav anterior/siguiente */}
                           <label
                             htmlFor={`ch-${prevSlug}`}
-                            className="absolute left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-background/80 ring-1 ring-[var(--border)] text-[var(--foreground)] text-xl font-semibold hidden md:flex items-center justify-center pointer-events-auto hover:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                            className="absolute left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-[var(--background)]/80 ring-1 ring-[var(--border)] text-[var(--foreground)] text-xl font-semibold hidden md:flex items-center justify-center pointer-events-auto hover:bg-[var(--background)]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                             aria-label="Anterior"
                           >
                             ‹
                           </label>
                           <label
                             htmlFor={`ch-${nextSlug}`}
-                            className="absolute right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-background/80 ring-1 ring-[var(--border)] text-[var(--foreground)] text-xl font-semibold hidden md:flex items-center justify-center pointer-events-auto hover:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                            className="absolute right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-[var(--background)]/80 ring-1 ring-[var(--border)] text-[var(--foreground)] text-xl font-semibold hidden md:flex items-center justify-center pointer-events-auto hover:bg-[var(--background)]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                             aria-label="Siguiente"
                           >
                             ›
@@ -679,7 +678,7 @@ export default function Page() {
                             {/* Close X */}
                             <label
                               htmlFor="ch-none"
-                              className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/70 ring-1 ring-[var(--border)] text-[var(--foreground)] text-lg font-semibold hover:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                              className="absolute top-3 right-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[var(--background)]/70 ring-1 ring-[var(--border)] text-[var(--foreground)] text-lg font-semibold hover:bg-[var(--background)]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                               aria-label="Cerrar"
                             >
                               ×
@@ -687,7 +686,7 @@ export default function Page() {
 
                             <div className="max-h-[80vh] overflow-y-auto p-6 space-y-4">
                               <div className="flex justify-center">
-                                <div className="relative w-72 md:w-[34rem] max-h-[72vh] aspect-[3/4] rounded-xl bg-background/40 overflow-hidden">
+                                <div className="relative w-72 md:w-[34rem] max-h-[72vh] aspect-[3/4] rounded-xl bg-[var(--background)]/40 overflow-hidden">
                                   <Image src={p.src} alt={p.alt} fill className="object-contain" />
                                 </div>
                               </div>
@@ -701,7 +700,7 @@ export default function Page() {
                               <div className="flex justify-end pt-2">
                                 <label
                                   htmlFor="ch-none"
-                                  className="inline-flex items-center rounded-md bg-foreground/90 px-3 py-1.5 text-xs font-medium text-background hover:bg-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
+                                  className="inline-flex items-center rounded-md bg-[var(--foreground)]/90 px-3 py-1.5 text-xs font-medium text-[var(--background)] hover:bg-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]/50"
                                 >
                                   Cerrar
                                 </label>
@@ -721,7 +720,7 @@ export default function Page() {
                     <span className="[#more-personajes:checked_~_&]:hidden">Ver más</span>
                     <span className="hidden [#more-personajes:checked_~_&]:inline">Ver menos</span>
                   </label>
-                  <span className="mt-1 text-[18px] leading-none text-foreground/70 transition-transform [#more-personajes:checked_~_&]:rotate-180">⌄</span>
+                  <span className="mt-1 text-[18px] leading-none text-[var(--foreground)]/70 transition-transform [#more-personajes:checked_~_&]:rotate-180">⌄</span>
                 </div>
               </section>
             </section>
@@ -732,10 +731,10 @@ export default function Page() {
                 {SHOW_TIMELINE && (
                   <div id="cronologia" className="space-y-4">
                     <h2 className="ty-h2">Cronología</h2>
-                    <Card className="relative mt-2 w-full rounded-[18px] border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] p-6 md:p-8 overflow-hidden ring-1 ring-white/8 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+                    <Card className="relative mt-2 w-full rounded-[18px] border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] p-6 md:p-8 overflow-hidden ring-1 ring-white/8 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
                       <div className="relative space-y-3">
-                        <p className="text-[12px] uppercase tracking-[0.18em] text-foreground/60">Línea del tiempo del universo</p>
+                        <p className="text-[12px] uppercase tracking-[0.18em] text-[var(--foreground)]/60">Línea del tiempo del universo</p>
                         <Timeline heading="Cronología del Mundo Kiso" items={MUNDO_KISO_TIMELINE} />
                       </div>
                     </Card>
@@ -746,79 +745,79 @@ export default function Page() {
     <h2 className="ty-h2">Símbolos</h2>
     <div className="grid gap-6 md:grid-cols-3 items-stretch">
       {/* Emblema */}
-      <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0,0,0,0.10)]">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+      <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0, 0, 0, 0.10)]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
         {/* Marca de agua emblema */}
         <div className="pointer-events-none absolute right-4 top-4 w-16 h-16 opacity-[.06]" style={{ mask: 'url(/symbols/emblema.svg) no-repeat center / contain', WebkitMask: 'url(/symbols/emblema.svg) no-repeat center / contain', background: 'currentColor' }} aria-hidden />
         <h3 className="text-[15px] font-semibold">Emblema</h3>
         <figure className="mt-3">
           <div className="relative w-full aspect-[4/3] rounded-xl ring-1 ring-[var(--border)] bg-[var(--surface-alt)] flex items-center justify-center">
-            <span className="text-xs text-foreground/60">Arte del emblema - placeholder</span>
+            <span className="text-xs text-[var(--foreground)]/60">Arte del emblema - placeholder</span>
           </div>
-          <figcaption className="mt-2 text-xs text-foreground/65">Reemplazar por SVG oficial. No definir significados sin documento canónico.</figcaption>
-          <ul className="mt-3 text-[12px] text-foreground/70 list-disc ps-5 space-y-1">
+          <figcaption className="mt-2 text-xs text-[var(--foreground)]/65">Reemplazar por SVG oficial. No definir significados sin documento canónico.</figcaption>
+          <ul className="mt-3 text-[12px] text-[var(--foreground)]/70 list-disc ps-5 space-y-1">
             <li>Versiones: color principal (Rojo Kiso) y monocromo (Antracita / Blanco).</li>
             <li>Área de seguridad mínima: 1× el grosor del trazo exterior (referencial).</li>
             <li>Tamaño mínimo sugerido: 24 px en interfaz / 16 mm en impresión.</li>
             <li>No deformar, inclinar ni aplicar efectos o sombras.</li>
           </ul>
-          <p className="mt-2 text-[11px] text-foreground/60">*Borrador de uso; se ajustará a la guía oficial.</p>
+          <p className="mt-2 text-[11px] text-[var(--foreground)]/60">*Borrador de uso; se ajustará a la guía oficial.</p>
         </figure>
       </article>
 
       {/* Paleta */}
       {SHOW_BRAND_COLORS && (
-      <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0,0,0,0.10)]">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+      <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0, 0, 0, 0.10)]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
         <h3 className="text-[15px] font-semibold">Colores</h3>
-        <p className="mt-2 text-[13px] text-foreground/85">Tres tonos guía para la experiencia pública de Mundo Kiso.</p>
+        <p className="mt-2 text-[13px] text-[var(--foreground)]/85">Tres tonos guía para la experiencia pública de Mundo Kiso.</p>
         <ul className="mt-3 grid grid-cols-3 gap-3" aria-label="Colores de marca">
           <li className="space-y-1">
             <div className="h-12 rounded-md ring-1 ring-[var(--border)]" style={{background: 'var(--hero-primary)'}} aria-label="Rojo Kiso" />
-            <div className="text-[12px] text-foreground/75">Rojo Kiso</div>
-            <p className="text-[11px] text-foreground/60">Acciones primarias, acentos</p>
+            <div className="text-[12px] text-[var(--foreground)]/75">Rojo Kiso</div>
+            <p className="text-[11px] text-[var(--foreground)]/60">Acciones primarias, acentos</p>
           </li>
           <li className="space-y-1">
             <div className="h-12 rounded-md ring-1 ring-[var(--border)]" style={{background: 'var(--accent)'}} aria-label="Antracita" />
-            <div className="text-[12px] text-foreground/75">Antracita</div>
-            <p className="text-[11px] text-foreground/60">Texto, iconos, contornos</p>
+            <div className="text-[12px] text-[var(--foreground)]/75">Antracita</div>
+            <p className="text-[11px] text-[var(--foreground)]/60">Texto, iconos, contornos</p>
           </li>
           <li className="space-y-1">
             <div className="h-12 rounded-md ring-1 ring-[var(--border)]" style={{background: 'var(--surface)'}} aria-label="Crema base" />
-            <div className="text-[12px] text-foreground/75">Crema base</div>
-            <p className="text-[11px] text-foreground/60">Fondos y tarjetas</p>
+            <div className="text-[12px] text-[var(--foreground)]/75">Crema base</div>
+            <p className="text-[11px] text-[var(--foreground)]/60">Fondos y tarjetas</p>
           </li>
         </ul>
-        <p className="mt-3 text-[11px] text-foreground/60">
+        <p className="mt-3 text-[11px] text-[var(--foreground)]/60">
           Guía de color completa en <a className="underline underline-offset-2" href="/brand">/brand</a>.
         </p>
       </article>
       )}
 
       {SHOW_COLOR_EXAMPLE && (
-        <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0,0,0,0.10)]">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+        <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0, 0, 0, 0.10)]">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
           <h3 className="text-[15px] font-semibold">Aplicaciones de color</h3>
-          <p className="mt-2 text-[13px] text-foreground/85">Ejemplo de uso cromático en contexto.</p>
+          <p className="mt-2 text-[13px] text-[var(--foreground)]/85">Ejemplo de uso cromático en contexto.</p>
           <figure className="mt-3">
             <div className="relative w-full aspect-[4/3] rounded-xl ring-1 ring-[var(--border)] bg-[var(--surface-alt)] overflow-hidden">
               <Image src="/mundo-kiso/colores-aplicacion.jpg" alt="Aplicación cromática de la marca" fill className="object-cover" />
             </div>
-            <figcaption className="mt-2 text-[11px] text-foreground/60">Sustituí esta imagen por un recorte oficial (1200×900) cuando lo tengas.</figcaption>
+            <figcaption className="mt-2 text-[11px] text-[var(--foreground)]/60">Sustituí esta imagen por un recorte oficial (1200×900) cuando lo tengas.</figcaption>
           </figure>
         </article>
       )}
 
       {/* Motivos visuales */}
-      <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0,0,0,0.10)]">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
+      <article className="relative overflow-hidden rounded-2xl p-6 border border-[hsl(var(--border)/.14)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_24px_rgba(0, 0, 0, 0.10)]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
         <h3 className="text-[15px] font-semibold">Motivos</h3>
         <div className="mt-3 grid grid-cols-3 gap-2">
-          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[repeating-linear-gradient(45deg,rgba(255,255,255,.06)_0_8px,transparent_8px_16px)]" aria-label="Patrón diagonal - placeholder" />
-          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón radial - placeholder" />
-          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[linear-gradient(0deg,rgba(255,255,255,.06)_0,transparent_60%)]" aria-label="Patrón de franja - placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[repeating-linear-gradient(45deg,rgba(255, 255, 255, .06)_0_8px,transparent_8px_16px)]" aria-label="Patrón diagonal - placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[radial-gradient(circle_at_50%_50%,rgba(255, 255, 255, .06)_0,transparent_60%)]" aria-label="Patrón radial - placeholder" />
+          <div className="aspect-[4/3] rounded-md ring-1 ring-[var(--border)] bg-[linear-gradient(0deg,rgba(255, 255, 255, .06)_0,transparent_60%)]" aria-label="Patrón de franja - placeholder" />
         </div>
-        <p className="mt-2 text-[11px] text-foreground/60">*Reemplazar por SVG y texturas oficiales cuando estén aprobados.</p>
+        <p className="mt-2 text-[11px] text-[var(--foreground)]/60">*Reemplazar por SVG y texturas oficiales cuando estén aprobados.</p>
       </article>
     </div>
   </div>
@@ -830,7 +829,7 @@ export default function Page() {
             <section id="juegos-de-pelota" aria-labelledby="juegos-pelota-h" className="mt-10">
               <h2 id="juegos-pelota-h" className="ty-h2">Juegos de pelota · destacados</h2>
               <div className="mt-2 mb-5 flex items-center justify-between">
-                <p className="text-[13px] text-foreground/70 italic">
+                <p className="text-[13px] text-[var(--foreground)]/70 italic">
                   Tradiciones que inspiraron el universo de Kiso.
                 </p>
                 <a
@@ -841,9 +840,9 @@ export default function Page() {
                 </a>
               </div>
               <div className="mt-6 grid gap-6 md:grid-cols-2 lg:gap-8">
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">China · Song</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">China · Song</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Cuju</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Pionero del fútbol en la China milenaria. En la dinastía Song fue juego de corte y calle; el emperador Huizong
@@ -853,9 +852,9 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Japón · Heian</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Japón · Heian</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Kemari</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Juego ceremonial japonés sin ganadores ni perdedores: cooperación, cortesía y dominio técnico para mantener la
@@ -865,9 +864,9 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Grecia clásica</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Grecia clásica</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Episkyros</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Juego de la Antigua Grecia, de contacto y trabajo en equipo, donde podía usarse la mano. Dos equipos de 12–14
@@ -876,9 +875,9 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Francia · Edad Media</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Francia · Edad Media</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">La soule</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Juego medieval del norte de Francia (Normandía, Picardía). Se jugaba en prados, bosques o estanques, fuera de
@@ -889,9 +888,9 @@ export default function Page() {
                 </article>
 
                 {/* Ōllamaliztli */}
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Mesoamérica · Clásico–Posclásico</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Mesoamérica · Clásico–Posclásico</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Ōllamaliztli</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Juego ritual de Mesoamérica practicado por mayas y mexicas con pelota de hule maciza. El objetivo no era anotar puntos, sino
@@ -903,9 +902,9 @@ export default function Page() {
                 </article>
 
                 {/* Harpastum */}
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Roma · República–Imperio</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Roma · República–Imperio</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Harpastum</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Adaptación romana de juegos griegos de balón. Rápido y físico, enfrentaba equipos que buscaban mantener la posesión de una
@@ -916,9 +915,9 @@ export default function Page() {
                 </article>
 
                 {/* Calcio fiorentino */}
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Florencia · Renacimiento</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Florencia · Renacimiento</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Calcio fiorentino</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Espectáculo cívico y violento del siglo XVI: equipos de 27 jugadores chocaban en la Piazza Santa Croce para avanzar una pelota
@@ -929,9 +928,9 @@ export default function Page() {
                 </article>
 
                 {/* Sepak takraw */}
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Sudeste Asiático · s. XV–XX</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Sudeste Asiático · s. XV–XX</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Sepak takraw</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Disciplina acrobática que combina control de balón con saltos y voleas por encima de una red, usando pies, rodillas, hombros y
@@ -941,9 +940,9 @@ export default function Page() {
                   </p>
                 </article>
 
-                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] md:col-span-2 ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255,255,255,.12)_0%,transparent_58%)]" aria-hidden />
-                  <div className="text-[12px] tracking-[0.12em] text-foreground/60">Mito del Orbe</div>
+                <article className="relative anim-fade-in overflow-hidden rounded-2xl p-6 md:p-8 border border-[hsl(var(--border)/.12)] bg-[var(--surface)] text-[var(--foreground)] md:col-span-2 ring-1 ring-white/6 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_90%_at_28%_0%,rgba(255, 255, 255, .12)_0%,transparent_58%)]" aria-hidden />
+                  <div className="text-[12px] tracking-[0.12em] text-[var(--foreground)]/60">Mito del Orbe</div>
                   <h3 className="text-[18px] md:text-[20px] font-semibold">Juego de los dioses</h3>
                   <p className="mt-3 text-[14px] leading-relaxed opacity-90 max-w-[62ch]">
                     Antes de perder su poder el Orbe Sagrado, el juego divino tenía tres rondas sin violencia ni uso de manos. La
@@ -963,7 +962,7 @@ export default function Page() {
             {/* Galería */}
             <section id="galeria" className="mt-12">
               <h2 className="ty-h2">Galería</h2>
-              <div className="mt-4 relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/8 shadow-[0_10px_28px_rgba(0,0,0,0.10)]">
+              <div className="mt-4 relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] ring-1 ring-white/8 shadow-[0_10px_28px_rgba(0, 0, 0, 0.10)]">
                 {/* Fades laterales para dar profundidad */}
                 <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-card to-transparent" aria-hidden />
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-card to-transparent" aria-hidden />
