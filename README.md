@@ -8,7 +8,7 @@ Sitio oficial del **universo Kiso** (Next.js App Router + TS + Tailwind v3).
 
 ## Stack
 - **Next.js 15 (App Router)** + **TypeScript**
-- **Tailwind CSS v3** (no v4) + PostCSS/Autoprefixer
+- **Tailwind CSS v3** + PostCSS/Autoprefixer
 - Utilidades: **clsx**, **lucide-react**
 
 ## Scripts útiles
@@ -123,12 +123,6 @@ public/
 - **Arco (narrativo)**: capítulo grande del universo (título + sinopsis + periodo).
 - **PNG personaje**: `public/personajes/<slug>/<slug>.png` (recortado, sin fondo). 
 - **ImageKit**: define `NEXT_PUBLIC_IK_BASE` (ej. `https://ik.imagekit.io/<cuenta>`), sube a `/gallery/mundo-kiso/`.
-
-## Forma de trabajo
-- **Ediciones directas**: “abrí archivo → pegá código”. Sin parches ni `any`.
-- **Mobile‑first**, estética sobria (Apple/Notion‑like).
-- **Tailwind v3** fijo (no v4). 
-- Mensajes breves, una tarea por vez.
 
 ---
 Autor: Equipo KISOLAND - 2025
